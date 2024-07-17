@@ -2,6 +2,27 @@
 
 ![](./img/ad.png)
 
+![](https://avatars.githubusercontent.com/u/142007781?s=400&u=3051e39dae4470600bf72bf50abb36fc15692e12&v=4)
+
+1. 준비물
+2. 목차
+## 1. 준비물
+* Ubuntu 22.04 설치된 노트북
+  * 원활한 강의 진행을 위해서 반드시 Ubuntu 22.04를 설치
+  * 가상머신이나 VMWare를 통한 Ubuntu 22.04 설치 금지!!
+
+* ROS 2 humble 버전 설치
+  * 설치방법 : [링크 참조](https://docs.ros.org/en/humble/Installation/Ubuntu-Install-Debians.html)
+
+* JaraBot
+
+## 2. 목차
+1. 1일차
+2. 2일차
+3. 3일차
+
+
+
 ## 시간표
 ### Day 1
 * 다룰 내용
