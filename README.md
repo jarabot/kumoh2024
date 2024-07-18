@@ -25,36 +25,54 @@
 
 ## 시간표
 ### Day 1
-* 다룰 내용
-   * Intro
-      * 왜 ROS 2를 배워야할까?
-      * ROS 2 관련 소개 및 최신 ROS 2 Tech 이야기
-   * ROS 2 기본
-      * CLI 다루기
-      * Topic
-      * Pub/Sub
-      * Service
-      * Action
-      * Parameter
-      * ...
-
 
 | 시간   |      내용      |
 |----------|:-------------:|
 | 09:30 ~ 10:00 | 인사, 목표, Q&A |
-| 10:00 ~ 11:00 | ROS 2 Trend   |
-| 11:00 ~ 12:00 | 개발 환경 설치 및 셋업 |
+| 10:00 ~ 11:00 | ROS 2 Trend (ROSCon)  |
+| 11:00 ~ 12:00 | [개발 환경 설정 확인](./ROS2/1_Beginner:CLITools/1_Configuring%20environment.md) |
 | 12:00 ~ 13:00 | 점심식사 |
-| 13:00 ~ 14:00 |  |
-| 14:00 ~ 15:00 |  |
-| 15:00 ~ 16:00 |  |
-| 16:00 ~ 17:00 |  |
-| 17:00 ~ 18:00 |  |
+| 13:00 ~ 14:00 | [CLI 도구 사용법 Quick 리뷰](./ROS2/1_Beginner:CLITools/8_usingRqt_console.md) , [ROS 2 핵심 개념 Quick 리뷰](./ROS2/1_Beginner:CLITools/3_nodes.md) |
+| 14:00 ~ 15:00 | [pub/sub 구현 C++](./ROS2/2_Beginner:ClientLibrary/4\)writingPublisherSubscriber.md), [pub/sub 구현 Python](./ROS2/2_Beginner:ClientLibrary/5\)writingPublisherSubscriberPython.md) |
+| 15:00 ~ 16:00 | [service 구현 C++](./ROS2/2_Beginner:ClientLibrary/6\)writingActionServerClient.md), [service 구현 Python](./ROS2/2_Beginner:ClientLibrary/7\)writingActionServerClientPython.md) |
+| 16:00 ~ 17:00 | [커스텀 msg와 srv 파일 생성하기](./ROS2/2_Beginner:ClientLibrary/8\)CreatingCustomMsgAndSrvFiles.md), [custom interface 구현하기](./ROS2/2_Beginner:ClientLibrary/9\)implementingCustomInterfaces.md) |
+| 17:00 ~ 18:00 | [action server/client 작성 (C++)](./ROS2/2_Beginner:ClientLibrary/6\)writingActionServerClient.md), [action server/client 작성 (Python)](./ROS2/2_Beginner:ClientLibrary/7\)writingActionServerClientPython.md) |
 | 18:00 ~ 19:00 | 저녁식사  |
 | 19:00 ~ 20:00 |  |
 | 20:00 ~ 21:00 |  |
 | 21:00 ~ 21:30 |  |
 
+* [개발 환경 설정 확인](./ROS2/1_Beginner:CLITools/1_Configuring%20environment.md)
+* [CLI 도구 사용법 Quick 리뷰](./ROS2/1_Beginner:CLITools/8_usingRqt_console.md)
+* [ROS 2 핵심 개념 Quick 리뷰](./ROS2/1_Beginner:CLITools/3_nodes.md)
+* [pub/sub 구현 C++](./ROS2/2_Beginner:ClientLibrary/4\)writingPublisherSubscriber.md)
+* [pub/sub 구현 Python](./ROS2/2_Beginner:ClientLibrary/5\)writingPublisherSubscriberPython.md)
+* [service 구현 C++](./ROS2/2_Beginner:ClientLibrary/6\)writingActionServerClient.md)
+* [service 구현 Python](./ROS2/2_Beginner:ClientLibrary/7\)writingActionServerClientPython.md)
+* [커스텀 msg와 srv 파일 생성하기](./ROS2/2_Beginner:ClientLibrary/8\)CreatingCustomMsgAndSrvFiles.md)
+* [custom interface 구현하기](./ROS2/2_Beginner:ClientLibrary/9\)implementingCustomInterfaces.md)
+* [parameters 사용하기 (C++)](./ROS2/2_Beginner:ClientLibrary/10\)usingParameter\(중복\).md)
+* [parameters 사용하기 (Python)](./ROS2/2_Beginner:ClientLibrary/11\)usingParameterPython\(중복\).md)
+* [plugins 생성하고 사용하기 (C++)](./ROS2/2_Beginner:ClientLibrary/13\)CreatingAndUsingPluginsCpp.md)
+* [action server/client 작성 (C++)](./ROS2/2_Beginner:ClientLibrary/6\)writingActionServerClient.md)
+* [action server/client 작성 (Python)](./ROS2/2_Beginner:ClientLibrary/7\)writingActionServerClientPython.md)
+---
+* [tf2 소개](./ROS2/5_Intermediate:TF2/tf2_IntroducingTF2.md)
+* [static broadcaster 작성하기(C++)](./ROS2/5_Intermediate:TF2/tf2_WritingAStaticBroadcaster_C++.md)
+* [static broadcaster 작성하기(Python)](./ROS2/5_Intermediate:TF2/tf2_WritingAStaticBroadcaster_Python.md)
+* [broadcaster 작성하기(C++)](./ROS2/5_Intermediate:TF2/tf2_WritingABroadcaster_C++.md)
+* [broadcaster 작성하기(Python)](./ROS2/5_Intermediate:TF2/tf2_WritingABroadcaster_Python.md)
+* [listener 작성하기(C++)](./ROS2/5_Intermediate:TF2/tf2_WritingAListener_C++.md)
+* [listener 작성하기(Python)](./ROS2/5_Intermediate:TF2/tf2_WritingAListener_Python.md)
+* [프레임 추가하기(C++)](./ROS2/5_Intermediate:TF2/tf2_AddingAFrame_C++.md)
+* [프레임 추가하기(Python)](./ROS2/5_Intermediate:TF2/tf2_AddingAFrame_Python.md)
+* ['time'기능 사용하기(C++)](./ROS2/5_Intermediate:TF2/tf2_UsingTime_C++.md)
+* ['time'기능 사용하기(Python)](./ROS2/5_Intermediate:TF2/tf2_UsingTime_Python.md)
+* [시간여행 하기(C++)](./ROS2/5_Intermediate:TF2/tf2_TravelingInTime_C++.md)
+* [시간여행 하기(Python)](./ROS2/5_Intermediate:TF2/tf2_TravelingInTime_Python.md)
+* [디버깅](./ROS2/5_Intermediate:TF2/tf2_Debugging.md)
+* [쿼터니언 기초](./ROS2/5_Intermediate:TF2/tf2_QuaternionFundamentals.md)
+* [메세지 필터를 이용한 'stamped' 자료형 사용하기](./ROS2/5_Intermediate:TF2/tf2_UsingStampedDatatypesWith_tf2_ros_MessageFilter.md)
 
 ### Day 2
 * 다룰 내용
@@ -64,29 +82,29 @@
    * 기술 소개
       * Navigation
       * Map
-      
 
 | 시간   |      내용      |
 |----------|:-------------:|
-| 09:00 ~ 10:00 |  |
-| 10:00 ~ 11:00 |  |
-| 11:00 ~ 12:00 |  |
+| 09:00 ~ 10:00 | [Cartographer 이해](./Cartographer/README.md) |
+| 10:00 ~ 11:00 | [Navigation 이해](./Navigation/README.md) |
+| 11:00 ~ 12:00 | [시뮬레이션 SLAM](./SLAM/simulation_slam.md), [시뮬레이션 Navigation](./SLAM/simulation_nav.md) |
 | 12:00 ~ 13:00 | 점심식사 |
-| 13:00 ~ 14:00 |  |
-| 14:00 ~ 15:00 |  |
-| 15:00 ~ 16:00 |  |
-| 16:00 ~ 17:00 |  |
-| 17:00 ~ 18:00 |  |
+| 13:00 ~ 14:00 | [Jarabot 설정](./jarabot/Setup.md) |
+| 14:00 ~ 15:00 | [PC 설정](./jarabot/PCSetup.md), [설정완료 확인](./jarabot/Done.md) |
+| 15:00 ~ 16:00 | [Jarabot Source Repo](https://github.com/jarabot/jarabot), [Jarabot 휠 동작](./jarabot/wheelcontrol.md) |
+| 16:00 ~ 17:00 | [Jarabot 키보드로 조작](./Exercise/MovingJarabot.md),  [JaraBot 지도 생성하기](./Exercise/BuildMap.md) |
+| 17:00 ~ 18:00 | [Jarabot Navigation 하기](./Exercise/DoNavigation.md) |
 | 18:00 ~ 19:00 | 저녁식사  |
-| 19:00 ~ 20:00 |  |
+| 19:00 ~ 20:00 | [Jarabot Navigation 하기](./Exercise/DoNavigation.md) |
 | 20:00 ~ 21:00 | 대회 준비 연습 |
 
 ### Day 3
+
 | 시간   |      내용      |
 |----------|:-------------:|
-| 09:00 ~ 10:00 | 대회 점검 |
-| 10:00 ~ 11:00 | 대회 1 |
-| 11:00 ~ 12:00 | 대회 1 (연속) |
+| 09:00 ~ 10:00 | 대회 소개 및 점검 |
+| 10:00 ~ 11:00 | [달려! 달려! JaraBot](./Competition/GoGoJarabot.md) |
+| 11:00 ~ 12:00 | 팀별 점검 |
 | 12:00 ~ 13:00 | 점심식사 |
-| 13:00 ~ 14:00 | 대회 2 |
-| 14:00 ~ 15:00 | 시상 |
+| 13:00 ~ 14:00 | [잘도 피해가는 JaraBot](./Competition/AvoidanceJarabot.md) |
+| 14:00 ~ 15:00 | 회고, 시상 |
