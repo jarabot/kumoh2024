@@ -47,17 +47,17 @@
 * [ROS 2 핵심 개념 Quick 리뷰](./ROS2/1_Beginner:CLITools/3_nodes.md) - 신
 * [pub/sub 구현 C++](./ROS2/2_Beginner:ClientLibrary/4\)writingPublisherSubscriber.md) - 신
 * [pub/sub 구현 Python](./ROS2/2_Beginner:ClientLibrary/5\)writingPublisherSubscriberPython.md) - 신
-* [service 구현 C++](./ROS2/2_Beginner:ClientLibrary/6\)writingActionServerClient.md)
-* [service 구현 Python](./ROS2/2_Beginner:ClientLibrary/7\)writingActionServerClientPython.md)
-* [커스텀 msg와 srv 파일 생성하기](./ROS2/2_Beginner:ClientLibrary/8\)CreatingCustomMsgAndSrvFiles.md)
-* [custom interface 구현하기](./ROS2/2_Beginner:ClientLibrary/9\)implementingCustomInterfaces.md)
-* [parameters 사용하기 (C++)](./ROS2/2_Beginner:ClientLibrary/10\)usingParameter\(중복\).md)
-* [parameters 사용하기 (Python)](./ROS2/2_Beginner:ClientLibrary/11\)usingParameterPython\(중복\).md)
-* [plugins 생성하고 사용하기 (C++)](./ROS2/2_Beginner:ClientLibrary/13\)CreatingAndUsingPluginsCpp.md)
-* [action server/client 작성 (C++)](./ROS2/2_Beginner:ClientLibrary/6\)writingActionServerClient.md)
+* [service 구현 C++](./ROS2/2_Beginner:ClientLibrary/6\)writingActionServerClient.md) - 문
+* [service 구현 Python](./ROS2/2_Beginner:ClientLibrary/7\)writingActionServerClientPython.md) - 문
+* [커스텀 msg와 srv 파일 생성하기](./ROS2/2_Beginner:ClientLibrary/8\)CreatingCustomMsgAndSrvFiles.md) - 문
+* [custom interface 구현하기](./ROS2/2_Beginner:ClientLibrary/9\)implementingCustomInterfaces.md) - 문
+* [parameters 사용하기 (C++)](./ROS2/2_Beginner:ClientLibrary/10\)usingParameter\(중복\).md) - 문
+* [parameters 사용하기 (Python)](./ROS2/2_Beginner:ClientLibrary/11\)usingParameterPython\(중복\).md) - 문
+* [plugins 생성하고 사용하기 (C++)](./ROS2/2_Beginner:ClientLibrary/13\)CreatingAndUsingPluginsCpp.md) - 문
+* [action server/client 작성 (C++)](./ROS2/2_Beginner:ClientLibrary/6\)writingActionServerClient.md) - 문
 * [action server/client 작성 (Python)](./ROS2/2_Beginner:ClientLibrary/7\)writingActionServerClientPython.md)
 ---
-* [tf2 소개](./ROS2/5_Intermediate:TF2/tf2_IntroducingTF2.md)
+* [tf2 소개](./ROS2/5_Intermediate:TF2/tf2_IntroducingTF2.md) - 문
 * [static broadcaster 작성하기(C++)](./ROS2/5_Intermediate:TF2/tf2_WritingAStaticBroadcaster_C++.md)
 * [static broadcaster 작성하기(Python)](./ROS2/5_Intermediate:TF2/tf2_WritingAStaticBroadcaster_Python.md)
 * [broadcaster 작성하기(C++)](./ROS2/5_Intermediate:TF2/tf2_WritingABroadcaster_C++.md)
@@ -102,9 +102,9 @@
 
 | 시간   |      내용      |
 |----------|:-------------:|
-| 09:00 ~ 10:00 | 대회 소개 및 점검 |
+| 09:00 ~ 10:00 | 대회 소개 및 점검 - 신 |
 | 10:00 ~ 11:00 | [달려! 달려! JaraBot](./Competition/GoGoJarabot.md) |
 | 11:00 ~ 12:00 | 팀별 점검 |
 | 12:00 ~ 13:00 | 점심식사 |
 | 13:00 ~ 14:00 | [잘도 피해가는 JaraBot](./Competition/AvoidanceJarabot.md) |
-| 14:00 ~ 15:00 | 회고, 시상 |
+| 14:00 ~ 15:00 | 회고, 시상 - 신 |
