@@ -28,25 +28,25 @@
 
 | 시간   |      내용      |
 |----------|:-------------:|
-| 09:30 ~ 10:00 | 인사, 목표, Q&A |
-| 10:00 ~ 11:00 | ROS 2 Trend (ROSCon)  |
-| 11:00 ~ 12:00 | [개발 환경 설정 확인](./ROS2/1_Beginner:CLITools/1_Configuring%20environment.md) |
+| 09:30 ~ 10:00 | 인사, 목표, Q&A  - 신 |
+| 10:00 ~ 11:00 | ROS 2 Trend (ROSCon)  - 신|
+| 11:00 ~ 12:00 | [개발 환경 설정 확인](./ROS2/1_Beginner:CLITools/1_Configuring%20environment.md) - 신 |
 | 12:00 ~ 13:00 | 점심식사 |
-| 13:00 ~ 14:00 | [CLI 도구 사용법 Quick 리뷰](./ROS2/1_Beginner:CLITools/8_usingRqt_console.md) , [ROS 2 핵심 개념 Quick 리뷰](./ROS2/1_Beginner:CLITools/3_nodes.md) |
-| 14:00 ~ 15:00 | [pub/sub 구현 C++](./ROS2/2_Beginner:ClientLibrary/4\)writingPublisherSubscriber.md), [pub/sub 구현 Python](./ROS2/2_Beginner:ClientLibrary/5\)writingPublisherSubscriberPython.md) |
-| 15:00 ~ 16:00 | [service 구현 C++](./ROS2/2_Beginner:ClientLibrary/6\)writingActionServerClient.md), [service 구현 Python](./ROS2/2_Beginner:ClientLibrary/7\)writingActionServerClientPython.md) |
-| 16:00 ~ 17:00 | [커스텀 msg와 srv 파일 생성하기](./ROS2/2_Beginner:ClientLibrary/8\)CreatingCustomMsgAndSrvFiles.md), [custom interface 구현하기](./ROS2/2_Beginner:ClientLibrary/9\)implementingCustomInterfaces.md) |
-| 17:00 ~ 18:00 | [action server/client 작성 (C++)](./ROS2/2_Beginner:ClientLibrary/6\)writingActionServerClient.md), [action server/client 작성 (Python)](./ROS2/2_Beginner:ClientLibrary/7\)writingActionServerClientPython.md) |
+| 13:00 ~ 14:00 | [CLI 도구 사용법 Quick 리뷰](./ROS2/1_Beginner:CLITools/8_usingRqt_console.md) , [ROS 2 핵심 개념 Quick 리뷰](./ROS2/1_Beginner:CLITools/3_nodes.md) - 신 |
+| 14:00 ~ 15:00 | [pub/sub 구현 C++](./ROS2/2_Beginner:ClientLibrary/4\)writingPublisherSubscriber.md), [pub/sub 구현 Python](./ROS2/2_Beginner:ClientLibrary/5\)writingPublisherSubscriberPython.md) - 신 |
+| 15:00 ~ 16:00 | [service 구현 C++](./ROS2/2_Beginner:ClientLibrary/6\)writingActionServerClient.md), [service 구현 Python](./ROS2/2_Beginner:ClientLibrary/7\)writingActionServerClientPython.md)  - 문 |
+| 16:00 ~ 17:00 | [커스텀 msg와 srv 파일 생성하기](./ROS2/2_Beginner:ClientLibrary/8\)CreatingCustomMsgAndSrvFiles.md), [custom interface 구현하기](./ROS2/2_Beginner:ClientLibrary/9\)implementingCustomInterfaces.md)  -문 |
+| 17:00 ~ 18:00 | [action server/client 작성 (C++)](./ROS2/2_Beginner:ClientLibrary/6\)writingActionServerClient.md), [action server/client 작성 (Python)](./ROS2/2_Beginner:ClientLibrary/7\)writingActionServerClientPython.md)  - 문 |
 | 18:00 ~ 19:00 | 저녁식사  |
-| 19:00 ~ 20:00 |  |
-| 20:00 ~ 21:00 |  |
-| 21:00 ~ 21:30 |  |
+| 19:00 ~ 20:00 | TF - 문 |
+| 20:00 ~ 21:00 | ??? - 문 |
+| 21:00 ~ 21:30 | Quiz - 문 |
 
-* [개발 환경 설정 확인](./ROS2/1_Beginner:CLITools/1_Configuring%20environment.md)
-* [CLI 도구 사용법 Quick 리뷰](./ROS2/1_Beginner:CLITools/8_usingRqt_console.md)
-* [ROS 2 핵심 개념 Quick 리뷰](./ROS2/1_Beginner:CLITools/3_nodes.md)
-* [pub/sub 구현 C++](./ROS2/2_Beginner:ClientLibrary/4\)writingPublisherSubscriber.md)
-* [pub/sub 구현 Python](./ROS2/2_Beginner:ClientLibrary/5\)writingPublisherSubscriberPython.md)
+* [개발 환경 설정 확인](./ROS2/1_Beginner:CLITools/1_Configuring%20environment.md) - 신
+* [CLI 도구 사용법 Quick 리뷰](./ROS2/1_Beginner:CLITools/8_usingRqt_console.md) - 신
+* [ROS 2 핵심 개념 Quick 리뷰](./ROS2/1_Beginner:CLITools/3_nodes.md) - 신
+* [pub/sub 구현 C++](./ROS2/2_Beginner:ClientLibrary/4\)writingPublisherSubscriber.md) - 신
+* [pub/sub 구현 Python](./ROS2/2_Beginner:ClientLibrary/5\)writingPublisherSubscriberPython.md) - 신
 * [service 구현 C++](./ROS2/2_Beginner:ClientLibrary/6\)writingActionServerClient.md)
 * [service 구현 Python](./ROS2/2_Beginner:ClientLibrary/7\)writingActionServerClientPython.md)
 * [커스텀 msg와 srv 파일 생성하기](./ROS2/2_Beginner:ClientLibrary/8\)CreatingCustomMsgAndSrvFiles.md)
@@ -85,18 +85,18 @@
 
 | 시간   |      내용      |
 |----------|:-------------:|
-| 09:00 ~ 10:00 | [Cartographer 이해](./Cartographer/README.md) |
-| 10:00 ~ 11:00 | [Navigation 이해](./Navigation/README.md) |
+| 09:00 ~ 10:00 | [Cartographer 이해](./Cartographer/README.md) - 신 |
+| 10:00 ~ 11:00 | [Navigation 이해](./Navigation/README.md) - 신 |
 | 11:00 ~ 12:00 | [시뮬레이션 SLAM](./SLAM/simulation_slam.md), [시뮬레이션 Navigation](./SLAM/simulation_nav.md) |
 | 12:00 ~ 13:00 | 점심식사 |
-| 13:00 ~ 14:00 | [Jarabot 설정](./jarabot/Setup.md) |
-| 14:00 ~ 15:00 | [PC 설정](./jarabot/PCSetup.md), [설정완료 확인](./jarabot/Done.md) |
-| 15:00 ~ 16:00 | [Jarabot Source Repo](https://github.com/jarabot/jarabot), [Jarabot 휠 동작](./jarabot/wheelcontrol.md) |
-| 16:00 ~ 17:00 | [Jarabot 키보드로 조작](./Exercise/MovingJarabot.md),  [JaraBot 지도 생성하기](./Exercise/BuildMap.md) |
-| 17:00 ~ 18:00 | [Jarabot Navigation 하기](./Exercise/DoNavigation.md) |
+| 13:00 ~ 14:00 | [Jarabot 설정](./jarabot/Setup.md)  - 문 |
+| 14:00 ~ 15:00 | [PC 설정](./jarabot/PCSetup.md), [설정완료 확인](./jarabot/Done.md) - 문|
+| 15:00 ~ 16:00 | [Jarabot Source Repo](https://github.com/jarabot/jarabot), [Jarabot 휠 동작](./jarabot/wheelcontrol.md) - 문 |
+| 16:00 ~ 17:00 | [Jarabot 키보드로 조작](./Exercise/MovingJarabot.md),  [JaraBot 지도 생성하기](./Exercise/BuildMap.md) - 문 |
+| 17:00 ~ 18:00 | [Jarabot Navigation 하기](./Exercise/DoNavigation.md) - 문 |
 | 18:00 ~ 19:00 | 저녁식사  |
-| 19:00 ~ 20:00 | [Jarabot Navigation 하기](./Exercise/DoNavigation.md) |
-| 20:00 ~ 21:00 | 대회 준비 연습 |
+| 19:00 ~ 20:00 | [Jarabot Navigation 하기](./Exercise/DoNavigation.md) - 문|
+| 20:00 ~ 21:00 | 대회 준비 연습 - 신 |
 
 ### Day 3
 
