@@ -1,8 +1,9 @@
 # 목차
 * [ROS2 최신](https://static.sched.com/hosted_files/px4devsummit2022/14/Katherine%20PX4.pdf?_gl=1*le0shw*_ga*MTQ4Nzk1MC4xNjg4NzkxMTM4*_ga_XH5XM35VHB*MTY4ODc5MTEzNy4xLjEuMTY4ODc5MzAxMC4wLjAuMA..)
+* [linux command line](https://m.hanbit.co.kr/channel/category/category_view.html?cms_code=CMS6390061632)
 * 개발 환경
   * [humble ROS 2 설치](https://docs.ros.org/en/humble/Installation/Ubuntu-Install-Debians.html)
-  * Visual Studio Code 설치
+  * [Visual Studio Code 설치](https://code.visualstudio.com/docs/setup/linux)
   * 다중 터미널 프로그램
     * [terminator](./terminator.md)
     * [tmux 설치](https://seongkyun.github.io/others/2019/01/05/tmux/)
@@ -13,7 +14,23 @@
     git config --global user.name "jeyong"
     git config --global user.email "support@gmail.com" 
     ```
+
 * ROS1 vs ROS2 구조 비교 
+
+![](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*hnKfDsdoQFedmsO1sZ4HQw.png)
+
+* ROS1의 Master와 ROS2 DDS 사용 구조
+
+![](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fw26Rz%2FbtrZIfxutLE%2FRzUELCLYdl1vbinAknWAF0%2Fimg.png)
+
+* ROS1
+
+![](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbP8McJ%2FbtrZD2yYqFH%2FXKpNamHpbB2Km8FuuKgkKk%2Fimg.png)
+
+* ROS2
+
+![](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fb2QyDV%2FbtrZIrYuuY2%2FABhL5CmUS1buSaDkXKc55k%2Fimg.png)
+
 ## Beginner : CLI
   * [ROS2 소개](./1_Beginner:CLITools/0_ROS2_intruduction.md)
   * [환경설정](./1_Beginner:CLITools/1_Configuring%20environment.md)
