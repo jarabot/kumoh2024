@@ -34,7 +34,7 @@
 | 12:00 ~ 13:00 | 점심식사 |
 | 13:00 ~ 14:00 | [CLI 도구 사용법 Quick 리뷰](./ROS2/1_Beginner:CLITools/8_usingRqt_console.md) , [ROS 2 핵심 개념 Quick 리뷰](./ROS2/1_Beginner:CLITools/3_nodes.md) - 신 |
 | 14:00 ~ 15:00 | [pub/sub 구현 C++](./ROS2/2_Beginner:ClientLibrary/4\)writingPublisherSubscriber.md), [pub/sub 구현 Python](./ROS2/2_Beginner:ClientLibrary/5\)writingPublisherSubscriberPython.md) - 신 |
-| 15:00 ~ 16:00 | [service 구현 C++](./ROS2/2_Beginner:ClientLibrary/6\)writingActionServerClient.md), [service 구현 Python](./ROS2/2_Beginner:ClientLibrary/7\)writingActionServerClientPython.md)  - 문 |
+| 15:00 ~ 16:00 | [service 구현 C++](./ROS2/2_Beginner:ClientLibrary/6)writingServiceServerClient.md), [service 구현 Python](./ROS2/2_Beginner:ClientLibrary/7\)writingActionServerClientPython.md)  - 문 |
 | 16:00 ~ 17:00 | [커스텀 msg와 srv 파일 생성하기](./ROS2/2_Beginner:ClientLibrary/8\)CreatingCustomMsgAndSrvFiles.md), [custom interface 구현하기](./ROS2/2_Beginner:ClientLibrary/9\)implementingCustomInterfaces.md)  -문 |
 | 17:00 ~ 18:00 | [action server/client 작성 (C++)](./ROS2/2_Beginner:ClientLibrary/6\)writingActionServerClient.md), [action server/client 작성 (Python)](./ROS2/2_Beginner:ClientLibrary/7\)writingActionServerClientPython.md)  - 문 |
 | 18:00 ~ 19:00 | 저녁식사  |
