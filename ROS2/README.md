@@ -1,9 +1,16 @@
 # 목차
 * [ROS2 최신](https://static.sched.com/hosted_files/px4devsummit2022/14/Katherine%20PX4.pdf?_gl=1*le0shw*_ga*MTQ4Nzk1MC4xNjg4NzkxMTM4*_ga_XH5XM35VHB*MTY4ODc5MTEzNy4xLjEuMTY4ODc5MzAxMC4wLjAuMA..)
-* [linux command line](https://m.hanbit.co.kr/channel/category/category_view.html?cms_code=CMS6390061632)
+* [The State of ROS: From the Iron Age to the Jazzy Age](https://vimeo.com/879001905) - ROSCon 2023
+* [Octomap is dead: long life Bonxai](https://roscon.ros.org/2023/talks/Octomap_is_dead_long_life_Bonxai.pdf)
+* [Simulate robots like never before with Open 3D Engine](https://roscon.ros.org/2023/talks/Simulate_robots_like_never_before_with_Open_3D_Engine.pdf)
+
 * 개발 환경
+  * [linux command line](https://m.hanbit.co.kr/channel/category/category_view.html?cms_code=CMS6390061632)
+
   * [humble ROS 2 설치](https://docs.ros.org/en/humble/Installation/Ubuntu-Install-Debians.html)
   * [Visual Studio Code 설치](https://code.visualstudio.com/docs/setup/linux)
+     * Extensions 설치
+        * theme, c++, python, ros
   * 다중 터미널 프로그램
     * [terminator](./terminator.md)
     * [tmux 설치](https://seongkyun.github.io/others/2019/01/05/tmux/)
