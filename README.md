@@ -47,8 +47,8 @@
 * [ROS 2 핵심 개념 Quick 리뷰](./ROS2/1_Beginner:CLITools/3_nodes.md) - 신
 * [pub/sub 구현 C++](./ROS2/2_Beginner:ClientLibrary/4\)writingPublisherSubscriber.md) - 신
 * [pub/sub 구현 Python](./ROS2/2_Beginner:ClientLibrary/5\)writingPublisherSubscriberPython.md) - 신
-* [service 구현 C++](./ROS2/2_Beginner:ClientLibrary/6\)writingActionServerClient.md) - 문
 * [service 구현 C++](./ROS2/2_Beginner:ClientLibrary/6\)writingServiceServerClient.md) - 문
+* [service 구현 Python](./ROS2/2_Beginner:ClientLibrary/7\)writingActionServerClientPython.md) - 문
 * [커스텀 msg와 srv 파일 생성하기](./ROS2/2_Beginner:ClientLibrary/8\)CreatingCustomMsgAndSrvFiles.md) - 문
 * [custom interface 구현하기](./ROS2/2_Beginner:ClientLibrary/9\)implementingCustomInterfaces.md) - 문
 * [parameters 사용하기 (C++)](./ROS2/2_Beginner:ClientLibrary/10\)usingParameter\(중복\).md) - 문
