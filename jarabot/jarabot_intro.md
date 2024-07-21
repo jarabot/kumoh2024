@@ -26,6 +26,15 @@
 
 # 2. Jarabot 이동 방향
 * Jarabot 이동방향
+  * 전진
+  * 후진
+  * 좌회전
+  * 전진 + 좌회전
+  * 우회전
+  * 전진 + 우회전
+  * 후진 + 우회전
+  * 후진 + 좌회전
+    
   ![](./jarabot_move_direction.jpg) 
 
 # 3. Jarabot Power On/Off
@@ -37,8 +46,8 @@
 # 4. 모터 제어를 위한 Pin 연결
 * Arduino 보드를 통해 Motor 동작을 제어한다
 * Arduino - Motor cable 연결
-  
-  ![](./jarabot_pin_connect.jpg)
+  ![Pin map](./jarabot_pin_map.jpg)  
+  ![Pin 연결](./jarabot_pin_connect.jpg)
 
 
 # 5. 안전 유의사항
