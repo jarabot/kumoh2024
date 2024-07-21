@@ -15,7 +15,7 @@
     * jara_driver: Jarabot 속도 조절을 위한 모터 제어 및 바퀴 회전량 측정
     * jara_odometry: 좌우 바퀴 회전량으로부터 Jarabot Pose 추정
       * Pose: 로봇의 위치와 방향을 모두 포함하는 개념
-        * geometry_msgs/Pose.msg 
+        * geometry_msgs::msg::Pose 
         ```cpp
            # A representation of pose in free space, composed of position and orientation.
            Point position
@@ -49,5 +49,26 @@
   * "/ecd" Topic 출판
     
 * jara_odometry: Jarabot 위치&자세 추정
-  * "/odom" Topic 출판  
-  * "/tf" Topic 출판 
+  * "/odom" Topic 출판
+    * nav_msgs::msg::Odometry
+      ```cpp
+       std_msgs/Header header
+       int32 left_encoder_val
+       int32 right_encoder_val
+      ```
+  * "/tf" Topic 출판
+    * tf2_msgs::msg::TFMessage
+      ```cpp
+         geometry_msgs/TransformStamped[] transforms
+      ``` 
+    * geometry_msgs::TransformStamped
+      ```cpp
+         # The frame id in the header is used as the reference frame of this transform.
+         std_msgs/Header header
+
+         # The frame id of the child frame to which this transform points.
+         string child_frame_id
+      
+         # Translation and rotation in 3-dimensions of child_frame_id from header.frame_id.
+         Transform transform
+      ``` 
