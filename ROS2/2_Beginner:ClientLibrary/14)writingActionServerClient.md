@@ -180,7 +180,7 @@ RCLCPP_COMPONENTS_REGISTER_NODE(action_tutorials_cpp::FibonacciActionServer)
 
 ```
 
-* FibonacciActionServer class 생성자에서 Node 이름 ("FibonacciActionServer") 설정
+* FibonacciActionServer class 생성자에서 Node 이름 ("fibonacci_action_server") 설정
 ```cpp
   explicit FibonacciActionServer(const rclcpp::NodeOptions & options = rclcpp::NodeOptions())
   : Node("fibonacci_action_server", options)
