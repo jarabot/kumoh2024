@@ -18,4 +18,19 @@
 
 ## 2. jarabot_interfaces
 
+* interface files
+  * Cmd.msg - Jarabot 속도 조절 명령
+  ```cpp
+    int32 linear_input
+    int32 angular_input
+  ```
+
+  * Ecd.msg - Motor 회전량
+  ```cpp
+    std_msgs/Header header
+    int32 left_encoder_val
+    int32 right_encoder_val
+  ```
+
+ 
 ## 3. jarabot_node
