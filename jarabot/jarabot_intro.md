@@ -16,29 +16,29 @@
     * camera
         
 * Jarabot image (top)
-  ![](./jarabot/jarabot_top.jpg)
+  ![](./jarabot_top.jpg)
 
 * Jarabot image (left)
-  ![](./jarabot/jarabot_left.jpg)
+  ![](./jarabot_left.jpg)
   
 * Jarabot image (right)
-  ![](./jarabot/jarabot_right.jpg)
+  ![](./jarabot_right.jpg)
 
 # 2. Jarabot 이동 방향
 * Jarabot 이동방향
-  ![](./jarabot/jarabot_move_direction.jpg) 
+  ![](./jarabot_move_direction.jpg) 
 
 # 3. Jarabot Power On/Off
 * Jarabot 전원 스위치
   * Jarabot 전진 방향을 기준으로 앞쪽 (on), 뒤쪽 (off)
   * 배터리 교체 시, 먼저 전원 스위치를 off 상태로 바꿀 것  
-  ![](./jarabot/jarabot_power_onoff.jpg) 
+  ![](./jarabot_power_onoff.jpg) 
 
 # 4. 모터 제어를 위한 Pin 연결
 * Arduino 보드를 통해 Motor 동작을 제어한다
 * Arduino - Motor cable 연결
   
-  ![](./jarabot/jarabot_pin_connect.jpg)
+  ![](./jarabot_pin_connect.jpg)
 
 
 # 5. 안전 유의사항
