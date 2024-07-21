@@ -7,10 +7,16 @@
 
 ## ROS1과 ROS2차이 
 * ROS1/ROS2 Architecture
+
 ![](./ros_archi.png)
 
     - ROS1 : 중앙 집중식 
     - ROS2 : DDS(Data Distribution Service)를 기반으로 한 분산 통신 
+
+* DDS(Data Distribution Service)
+
+![](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbOoxBH%2Fbtsz9yaeV5r%2FUAbuBHkWaLGJqm9KfiygU0%2Fimg.png)
+
 * DDS의 핵심모델 DCPS(Data-Centric Publish-Subscribe)
 ![](./dcps.png)
     - Global Data Space : 참여자들간의 데이터 교환을 위한 공간 
