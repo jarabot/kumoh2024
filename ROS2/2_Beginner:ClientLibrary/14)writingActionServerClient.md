@@ -620,4 +620,44 @@ install(TARGETS
   ```bash
   ros2 run action_tutorials_cpp fibonacci_action_client
   ```
+
+  * action server 실행 결과
+  * Goal 요청 수신
+  * Goal 실행 & 피드백 전달
+  * Goal 결과 보고  
+  ```bash
+  [INFO] [1721540116.431433101] [fibonacci_action_server]: Received goal request with order 10
+  [INFO] [1721540116.433206975] [fibonacci_action_server]: Executing goal
+  [INFO] [1721540116.434414283] [fibonacci_action_server]: Publish feedback
+  [INFO] [1721540117.433753784] [fibonacci_action_server]: Publish feedback
+  [INFO] [1721540118.433717597] [fibonacci_action_server]: Publish feedback
+  [INFO] [1721540119.433747555] [fibonacci_action_server]: Publish feedback
+  [INFO] [1721540120.433697565] [fibonacci_action_server]: Publish feedback
+  [INFO] [1721540121.433683133] [fibonacci_action_server]: Publish feedback
+  [INFO] [1721540122.434108886] [fibonacci_action_server]: Publish feedback
+  [INFO] [1721540123.433729234] [fibonacci_action_server]: Publish feedback
+  [INFO] [1721540124.433796768] [fibonacci_action_server]: Publish feedback
+  [INFO] [1721540125.435071946] [fibonacci_action_server]: Goal succeeded
+  ``` 
+
+* action client 실행 결과
+  * Goal 요청 송신
+  * Goal 피드백 수신
+  * Goal 결과 수신 
+  ```bash
+  [INFO] [1721540116.429967406] [fibonacci_action_client]: Sending goal
+  [INFO] [1721540116.433018183] [fibonacci_action_client]: Goal accepted by server, waiting for result
+  [INFO] [1721540116.435119305] [fibonacci_action_client]: Next number in sequence received: 0 1 1 
+  [INFO] [1721540117.433933963] [fibonacci_action_client]: Next number in sequence received: 0 1 1 2 
+  [INFO] [1721540118.434021564] [fibonacci_action_client]: Next number in sequence received: 0 1 1 2 3 
+  [INFO] [1721540119.434434228] [fibonacci_action_client]: Next number in sequence received: 0 1 1 2 3 5 
+  [INFO] [1721540120.433912345] [fibonacci_action_client]: Next number in sequence received: 0 1 1 2 3 5 8 
+  [INFO] [1721540121.433869762] [fibonacci_action_client]: Next number in sequence received: 0 1 1 2 3 5 8 13 
+  [INFO] [1721540122.434901052] [fibonacci_action_client]: Next number in sequence received: 0 1 1 2 3 5 8 13 21 
+  [INFO] [1721540123.433984938] [fibonacci_action_client]: Next number in sequence received: 0 1 1 2 3 5 8 13 21 34 
+  [INFO] [1721540124.434138744] [fibonacci_action_client]: Next number in sequence received: 0 1 1 2 3 5 8 13 21 34 55 
+  [INFO] [1721540125.436054440] [fibonacci_action_client]: Result received: 0 1 1 2 3 5 8 13 21 34 55 
+  ``` 
+  
+  
   
