@@ -4,7 +4,7 @@
 * 3. Jarabot Power On/Off
 * 4. 모터 제어를 위한 Pin 연결
 * 5. 안전 유의사항
-
+ 
 # 1. Jarabot
 * ROS 기반 자율주행 플랫폼
   * Jarabot 구성요소
