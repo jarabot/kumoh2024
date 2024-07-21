@@ -89,7 +89,7 @@
 | 10:00 ~ 11:00 | [Navigation 이해](./Navigation/README.md) - 신 |
 | 11:00 ~ 12:00 | [시뮬레이션 SLAM](./SLAM/simulation_slam.md), [시뮬레이션 Navigation](./SLAM/simulation_nav.md) |
 | 12:00 ~ 13:00 | 점심식사 |
-| 13:00 ~ 14:00 | [Jarabot 소개 및 구성]() [Jarabot 설정](./jarabot/Setup.md)  - 문 |
+| 13:00 ~ 14:00 | [Jarabot 소개 및 구성](./jarabot/jarabot_intro.md) [Jarabot 설정](./jarabot/Setup.md)  - 문 |
 | 14:00 ~ 15:00 | [PC 설정](./jarabot/PCSetup.md), [설정완료 확인](./jarabot/Done.md) - 문|
 | 15:00 ~ 16:00 | [Jarabot Source Repo](https://github.com/jarabot/jarabot), [Jarabot 휠 동작](./jarabot/wheelcontrol.md) - 문 |
 | 16:00 ~ 17:00 | [Jarabot 키보드로 조작](./Exercise/MovingJarabot.md),  [JaraBot 지도 생성하기](./Exercise/BuildMap.md) - 문 |
