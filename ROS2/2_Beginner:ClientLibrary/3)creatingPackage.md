@@ -140,3 +140,6 @@ CMakeLists.txt  include  package.xml  src
 </package>
 ```
   * 수정 후 저장하기!
+
+## Quiz
+* C++ 기반의 kumoh_package라는 package를 생성하고 이 패키지에는 gumi_node라는 node가 존재한다.

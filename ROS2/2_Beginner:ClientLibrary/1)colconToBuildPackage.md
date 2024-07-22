@@ -5,6 +5,7 @@
 ## 1. 개요
 * colcon 명령으로 ROS 2의 workspace를 빌드하는 방법 익히기
 * colcon은
+  * SW package 빌드 도구
   * ROS build 도구(catkin_make, catkin_make_isolated, catkin_tools, ament_tools 통합)
 
 * colcon 설치 명령 실행

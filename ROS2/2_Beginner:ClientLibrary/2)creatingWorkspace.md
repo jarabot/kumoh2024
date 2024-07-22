@@ -35,7 +35,7 @@ cd ~/ros2_ws/src
 * ros2_ws/src 디렉토리 내부에 소스 받아오기
 ```bash
 cd ~/ros2_ws/src
-git clone https://github.com/ros/ros_tutorials.git -b humble-devel
+git clone https://github.com/ros/ros_tutorials.git -b humble
 ```
 
 ### 2-4 의존성 해결
@@ -44,6 +44,8 @@ git clone https://github.com/ros/ros_tutorials.git -b humble-devel
    * ROS 2의 경우 package에 따라서 빌드 시간이 올래 걸릴 수 있음. 실컷 10분 빌드하고 나서 의존성에 문제가 있다는 것을 알게 되면 수정 후 다시 빌드해야하므로 시간을 낭비하게 됨.
 * 의존성 설치 명령
 ```bash
+# cd if you're still in the ``src`` directory with the ``ros_tutorials`` clone
+cd ..
 rosdep install -i --from-path src --rosdistro humble -y
 ```
 
