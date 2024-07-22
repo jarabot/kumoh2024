@@ -97,6 +97,29 @@ ros2 param dump <node_name>
 ```bash
 ros2 param dump /turtlesim
 ```
+
+* 화면에 출력
+```
+/turtlesim:
+  ros__parameters:
+    background_b: 255
+    background_g: 86
+    background_r: 150
+    qos_overrides:
+      /parameter_events:
+        publisher:
+          depth: 1000
+          durability: volatile
+          history: keep_last
+          reliability: reliable
+    use_sim_time: false
+```
+
+* parameters를 현재 디렉토리로 저장하려면
+```bash
+ros2 param dump --output-dir ./ /turtlesim
+```
+
 * 결과 (turtlesim.yaml 파일로 저장)
 ```
 Saving to:  ./turtlesim.yaml
