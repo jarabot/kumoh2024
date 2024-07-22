@@ -42,7 +42,7 @@ ros2 run turtlesim turtle_teleop_key
     ![](https://foxglove.dev/images/blog/understanding-ros-transforms/sensors.webp)
     [이미지 출처: https://foxglove.dev/blog/understanding-ros-transforms](https://foxglove.dev/blog/understanding-ros-transforms)
 
-    * Red arrow (X축) / Red arrow (Y축) / Green arrow (Z축)    * 
+    * Red arrow (X축) / Blue arrow (Y축) / Green arrow (Z축)    * 
     * 기준점과 좌표축을 어디에 두느냐에 따라 무수히 많은 frame이 존재한다
       * World frame (or map frame): 공간 좌표계 (3인칭 시점)
       * Robot frame (base_link): 로봇의 위치를 기준으로 하는 좌표계
