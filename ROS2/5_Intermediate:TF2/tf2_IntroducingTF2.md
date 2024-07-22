@@ -1,4 +1,3 @@
-<tf2 소개>
 
 # [tf2 소개](https://docs.ros.org/en/humble/Tutorials/Intermediate/Tf2/Introduction-To-Tf2.html)
 1. 목표
@@ -26,10 +25,9 @@ ros2 launch turtle_tf2_py turtle_tf2_demo.launch.py
 ```
 
 ![](https://docs.ros.org/en/humble/_images/turtlesim_follow1.png)
-, 다음 명령어를 실행한다.
 
 위 사진과 같이 두 개의 turtle이 실행되는 것을 볼 수 있다.
-새로운 터미널을 실행한 후
+새로운 터미널을 실행한 후 다음 명령어를 실행한다.
 ```bash
 ros2 run turtlesim turtle_teleop_key
 ```
@@ -44,7 +42,7 @@ ros2 run turtlesim turtle_teleop_key
     ![](https://foxglove.dev/images/blog/understanding-ros-transforms/sensors.webp)
     [이미지 출처: https://foxglove.dev/blog/understanding-ros-transforms](https://foxglove.dev/blog/understanding-ros-transforms)
 
-    * Red arrow (X축) / Red arrow (X축) / Green arrow (X축)    * 
+    * Red arrow (X축) / Red arrow (Y축) / Green arrow (Z축)    * 
     * 기준점과 좌표축을 어디에 두느냐에 따라 무수히 많은 frame이 존재한다
       * World frame (or map frame): 공간 좌표계 (3인칭 시점)
       * Robot frame (base_link): 로봇의 위치를 기준으로 하는 좌표계
@@ -62,6 +60,8 @@ ros2 run turtlesim turtle_teleop_key
           * Src frame: "world" frame or "turtle1" frame
           * Dest frame: "turtle2" frame
   * Transform: 한 frame을 다른 frame으로 변환하는 것
+    * ex) 로봇팔에 부착된 manipulator의 위치를  world frame 상의 좌표로 표현할 수 있다
+  
   * tf2: ROS2에서 frame 간 변환 기능을 제공하는 라이브러리 
 * ROS graph 구조
   ![](../../img/tf2_demo_graph.jpg) 
@@ -97,10 +97,10 @@ tf2_echo는 broadcast되고 있는 임의의 두 프레임간의 transform을 �
 
 사용 방법:
 ```bash
-ros2 run tf2_ros tf2_echo [reference_frame] [target_frame]
+ros2 run tf2_ros tf2_echo [source_frame] [target_frame]
 ```
 
-현재 터미널에서 아래 명령어를 실행하여, turtlr1 프레임에 대한 turtle2 프레임의 transform을 출력해보자
+현재 터미널에서 아래 명령어를 실행하여, turtlr2의 프레임을 turtle1 프레임으로 변환하는 transform을 출력하자
 
 ```bash
 ros2 run tf2_ros tf2_echo turtle2 turtle1
