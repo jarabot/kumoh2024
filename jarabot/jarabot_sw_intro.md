@@ -150,7 +150,7 @@
        int32 right_encoder_val
       ```
 
-    * /ect Topic 데이터 수신 > 로봇의 현재 위치와 속도(linear/angular) 업데이트
+    * /ecd Topic 데이터 수신 > 로봇의 현재 위치와 속도(linear/angular) 업데이트
       ```cpp
         // JaraOdometry::ecd_callback()
         // update position
