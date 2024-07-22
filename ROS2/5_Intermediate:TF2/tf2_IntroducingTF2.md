@@ -59,7 +59,7 @@ ros2 run turtlesim turtle_teleop_key
         * Turtle1의 위치를 Turtle2 기준으로 바꿔서 표현해야 한다
           * Src frame: "world" frame or "turtle1" frame
           * Dest frame: "turtle2" frame
-  * Transform: 한 frame을 다른 frame으로 변환하는 것
+  * Transform: 한 frame을 기준이 되는 다른 frame (reference frame)으로 표현하는 것
     * ex) 로봇팔에 부착된 manipulator의 위치를  world frame 상의 좌표로 표현할 수 있다
   
   * tf2: ROS2에서 frame 간 변환 기능을 제공하는 라이브러리 
@@ -97,7 +97,7 @@ tf2_echo는 broadcast되고 있는 임의의 두 프레임간의 transform을 �
 
 사용 방법:
 ```bash
-ros2 run tf2_ros tf2_echo [source_frame] [target_frame]
+ros2 run tf2_ros tf2_echo [reference_frame] [target_frame]
 ```
 
 현재 터미널에서 아래 명령어를 실행하여, turtlr2의 프레임을 turtle1 프레임으로 변환하는 transform을 출력하자
