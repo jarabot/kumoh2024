@@ -61,25 +61,149 @@
  
 ## 3. jarabot_node
 * jara_controller: Jarabot 속도 조절 
-  * 주기적으로 "/cmd" Topic 출판
+  * main_loop 실행 주기 설정
+    ```cpp
+        // JaraController 생성자
+        loop_rate_ = this->get_parameter("loop_rate").get_parameter_value().get<int>();
+
+        smoother_step_ = (2000 - 1660) / (loop_rate_ * 0.5);
+
+        // RCLCPP_INFO(this->get_logger(), "%f %f %f %f %i", linear_gain_, angular_gain_, wheel_radius_, wheel_base_, loop_rate_);
+
+        cmd_pub_ = this->create_publisher<jarabot_interfaces::msg::Cmd>("/cmd", loop_rate_);
+
+        mainloop_timer_ = this->create_wall_timer(std::chrono::milliseconds(1000 / loop_rate_), std::bind(&JaraController::main_loop, this));
+
+    ```
+
+  * 주기적으로 이동속도 제어를 위해 "/cmd" Topic 출판
+    * Note: 목표 속도가 현재 속도와 다를 때만 Topic 출판 
+    ```cpp
+      // Jara_controller::main_loop()
+      if (shouldSendCommand)
+            {
+                auto cmd_msg = jarabot_interfaces::msg::Cmd();
+                cmd_msg.linear_input = current_linear_input_;
+                cmd_msg.angular_input = current_angular_input_;
+                cmd_pub_->publish(cmd_msg);
+            }
     
+    ```
+     * Note: 현재 속도에 비해 목표 속도가 크게 변화하면 ( >= smoother_step_) 현재 속도를 점진적으로 증가/감소 
+    ```cpp
+      // Jara_controller::main_loop()
+      if( (target_linear_input_-current_linear_input_) > smoother_step_)
+                {
+                    current_linear_input_ += smoother_step_;
+                    shouldSendCommand = true;
+                }
+    ```
 * jara_driver: Jarabot 모터 제어 및 모니터링
-  * "/serial_write" Topic 출판
+  * "/cmd" Topic data 구독 
+    * 이동 속도 명령 수신
+    * cmd_callback() 호출 > "/serial_write" Topic 출판
+
+    ```cpp
+        void cmd_callback(const jarabot_interfaces::msg::Cmd::SharedPtr msg)
+        {
+          auto serial_msg = std_msgs::msg::UInt8MultiArray();
+          std::string str = std::string("pwm,") + std::to_string(msg->angular_input) + std::string(",") + std::to_string(msg->linear_input) + std::string(" \n");
+  
+          serial_msg.data.reserve(str.size());
+          for (char c : str)
+          {
+              serial_msg.data.push_back(static_cast<uint8_t>(c));
+          }
+  
+          serial_pub_->publish(serial_msg);
+        }
+    ``` 
+  
   * "/serial_read" Topic 구독
-  * "/ecd" Topic 출판
+    * "/ecd" Topic 출판 
+    ```cpp
+        // JaraDriver::serial_callback()
+        // Get the left and right parts of the line
+            std::string left_data = line.substr(0, comma_pos);
+            std::string right_data = line.substr(comma_pos + 1);
+            // ROS_INFO_STREAM("comma_pos : " << comma_pos);
+            // ROS_INFO_STREAM("left_data : " << left_data);
+            // Convert left_data and right_data to integers
+            try
+            {
+                auto ecd_msg = jarabot_interfaces::msg::Ecd();
+                ecd_msg.header.stamp = this->get_clock()->now();
+                ecd_msg.left_encoder_val = std::stoi(left_data);
+                ecd_msg.right_encoder_val = std::stoi(right_data);
+                ecd_pub_->publish(ecd_msg);
+            }
+    ``` 
     
 * jara_odometry: Jarabot 위치&자세 추정
-  * "/odom" Topic 출판
+  * "/ecd" Topic 구독
+    * odometry: ‘주행기록계’라는 의미
+      * 로봇의 주행 정보로부터 위치/방향 계산
+        
     * nav_msgs::msg::Odometry
-      ```cpp
+      ```cpp       
        std_msgs/Header header
        int32 left_encoder_val
        int32 right_encoder_val
       ```
+
+    * /ect Topic 데이터 수신 > 로봇의 현재 위치와 속도(linear/angular) 업데이트
+      ```cpp
+        // JaraOdometry::ecd_callback()
+        // update position
+        x_ += delta_distance * cos(theta_);
+        y_ += delta_distance * sin(theta_);
+        theta_ += delta_theta;
+
+        // update velocity
+        v_x_ = delta_distance / (ecd_time - last_time_).seconds();
+        v_theta_ = delta_theta / (ecd_time - last_time_).seconds();
+
+      ```
+
+  * "/odom" Topic 출판
+      ```cpp
+        // JaraOdometry::ecd_callback()
+        // next, we'll publish the odometry message over ROS
+        nav_msgs::msg::Odometry odom;
+        odom.header.stamp = current_time;
+        odom.header.frame_id = "odom";
+
+        // set the position
+        odom.pose.pose.position.x = x_;
+        odom.pose.pose.position.y = y_;
+        odom.pose.pose.position.z = 0.0;
+        odom.pose.pose.orientation = odom_quat;
+
+        // set the velocity
+        odom.child_frame_id = "base_link";
+        odom.twist.twist.linear.x = v_x_;
+        odom.twist.twist.linear.y = 0.0;
+        odom.twist.twist.angular.z = v_theta_;
+
+        // publish the message
+        odom_pub_->publish(odom);
+
+      ```
+  
   * "/tf" Topic 출판
     * tf2_msgs::msg::TFMessage
       ```cpp
-         geometry_msgs/TransformStamped[] transforms
+         odom_trans.header.stamp = current_time;
+         odom_trans.header.frame_id = "odom";
+         odom_trans.child_frame_id = "base_link";
+ 
+         odom_trans.transform.translation.x = x_;
+         odom_trans.transform.translation.y = y_;
+         odom_trans.transform.translation.z = 0.0;
+         odom_trans.transform.rotation = odom_quat;
+
+        // send the transform
+        odom_broadcaster_->sendTransform(odom_trans);
       ``` 
     * geometry_msgs::TransformStamped
       ```cpp
