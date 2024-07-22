@@ -1,3 +1,5 @@
+<tf2 소개>
+
 # [tf2 소개](https://docs.ros.org/en/humble/Tutorials/Intermediate/Tf2/Introduction-To-Tf2.html)
 1. 목표
 1. 사전준비
@@ -45,13 +47,16 @@ ros2 run turtlesim turtle_teleop_key
     * Red arrow (X축) / Red arrow (X축) / Green arrow (X축)    * 
     * 기준점과 좌표축을 어디에 두느냐에 따라 무수히 많은 frame이 존재한다
       * World frame (or map frame): 공간 좌표계 (3인칭 시점)
-      * Robot frame: 로봇의 위치를 기준으로 하는 좌표계
+      * Robot frame (base_link): 로봇의 위치를 기준으로 하는 좌표계
         * "turtle1" frame: turtle1의 입장에서 바라본 좌표계
         * "turtle2" frame: turtle2의 입장에서 바라본 좌표계
         * ...
       * Sensor frame: 로봇에 부착된 센서를 기준으로 하는 좌표계
       * ...
     * 서로 다른 frame 사이에는 연관성이 있다
+      * World frame은 모든 frame의 상위 프레임이다
+      * Robot frame은 해당 로봇에 부착된 Sensor frame의 부모 frame이다
+      * "turtle1" frame과 "turtle2" frame은 둘 다 world frame의 자식 framd이다 
       * Turtle2가 Turtle1을 따라가려면?
         * Turtle1의 위치를 Turtle2 기준으로 바꿔서 표현해야 한다
           * Src frame: "world" frame or "turtle1" frame
@@ -84,7 +89,7 @@ tf2 listener는 broadcast되고 있는 프레임들을 listen하여, 프레임�
 
 ![](https://docs.ros.org/en/humble/_images/turtlesim_frames.png)
 
-위 tree에서, tf2가 broadcast하고 있는 world/turtlr1/turtlr2 프레임들을 확인 할 수 있다. 여기서 world프레임은 turtle1과 turtle2의 부모 프레임이다. 또한, 최초 및 최신 transform이나 publish 주기와 같은 디버깅용 정보도 함께 표시해 준다.
+위 tree에서, tf2가 broadcast하고 있는 world/turtle1/turtle2 프레임들을 확인 할 수 있다. 여기서 world프레임은 turtle1과 turtle2의 부모 프레임이다. 또한, 최초 및 최신 transform이나 publish 주기와 같은 디버깅용 정보도 함께 표시해 준다.
 
 ### 2. tf2_echo 사용해보기
 
