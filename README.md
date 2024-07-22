@@ -91,7 +91,7 @@
 | 12:00 ~ 13:00 | 점심식사 |
 | 13:00 ~ 14:00 | [Jarabot 소개 및 구성](./jarabot/jarabot_intro.md) [Jarabot 설정](./jarabot/Setup.md)  - 문 |
 | 14:00 ~ 15:00 | [PC 설정](./jarabot/PCSetup.md), [설정완료 확인](./jarabot/Done.md) - 문|
-| 15:00 ~ 16:00 | [Jarabot Source Repo](https://github.com/jarabot/jarabot), [Jarabot 휠 동작](./jarabot/wheelcontrol.md) - 문 |
+| 15:00 ~ 16:00 | [Jarabot_Code_설명](./jarabot/jarabot_sw_intro.md), [Jarabot Source Repo](https://github.com/jarabot/jarabot), [Jarabot 휠 동작](./jarabot/wheelcontrol.md) - 문 |
 | 16:00 ~ 17:00 | [Jarabot 키보드로 조작](./Exercise/MovingJarabot.md),  [JaraBot 지도 생성하기](./Exercise/BuildMap.md) - 문 |
 | 17:00 ~ 18:00 | [Jarabot Navigation 하기](./Exercise/DoNavigation.md) - 문 |
 | 18:00 ~ 19:00 | 저녁식사  |
