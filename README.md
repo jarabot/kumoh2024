@@ -39,7 +39,7 @@
 | 17:00 ~ 18:00 | [action server/client 작성 (C++)](./ROS2/2_Beginner:ClientLibrary/6\)writingActionServerClient.md), [action server/client 작성 (Python)](./ROS2/2_Beginner:ClientLibrary/7\)writingActionServerClientPython.md)  - 문 |
 | 18:00 ~ 19:00 | 저녁식사  |
 | 19:00 ~ 20:00 | TF - 문 |
-| 20:00 ~ 21:00 | ??? - 문 |
+| 20:00 ~ 21:00 | [parameters 사용하기 (C++)](./ROS2/2_Beginner:ClientLibrary/10\)UsingParametersInClassCpp.md), [parameters 사용하기 (Python)](./ROS2/2_Beginner:ClientLibrary/11\)usingParameterPython.md) - 문 |
 | 21:00 ~ 21:30 | Quiz - 문 |
 
 * [개발 환경 설정 확인](./ROS2/1_Beginner:CLITools/1_Configuring%20environment.md) - 신
@@ -51,8 +51,8 @@
 * [service 구현 Python](./ROS2/2_Beginner:ClientLibrary/7\)writingActionServerClientPython.md) - 문
 * [커스텀 msg와 srv 파일 생성하기](./ROS2/2_Beginner:ClientLibrary/8\)CreatingCustomMsgAndSrvFiles.md) - 문
 * [custom interface 구현하기](./ROS2/2_Beginner:ClientLibrary/9\)implementingCustomInterfaces.md) - 문
-* [parameters 사용하기 (C++)](./ROS2/2_Beginner:ClientLibrary/10\)usingParameter\(중복\).md) - 문
-* [parameters 사용하기 (Python)](./ROS2/2_Beginner:ClientLibrary/11\)usingParameterPython\(중복\).md) - 문
+* [parameters 사용하기 (C++)](./ROS2/2_Beginner:ClientLibrary/10\)UsingParametersInClassCpp.md) - 문
+* [parameters 사용하기 (Python)](./ROS2/2_Beginner:ClientLibrary/11\)usingParameterPython.md) - 문
 * [plugins 생성하고 사용하기 (C++)](./ROS2/2_Beginner:ClientLibrary/13\)CreatingAndUsingPluginsCpp.md) - 문
 * [action server/client 작성 (C++)](./ROS2/2_Beginner:ClientLibrary/6\)writingActionServerClient.md) - 문
 * [action server/client 작성 (Python)](./ROS2/2_Beginner:ClientLibrary/7\)writingActionServerClientPython.md)
