@@ -190,8 +190,9 @@
       ```
   
   * "/tf" Topic 출판
-    * tf2_msgs::msg::TFMessage
+    
       ```cpp
+         // JaraOdometry::ecd_callback()
          odom_trans.header.stamp = current_time;
          odom_trans.header.frame_id = "odom";
          odom_trans.child_frame_id = "base_link";
@@ -203,6 +204,10 @@
 
         // send the transform
         odom_broadcaster_->sendTransform(odom_trans);
+      ``` 
+    * tf2_msgs::msg::TFMessage
+      ```cpp
+         geometry_msgs/TransformStamped[] transforms
       ``` 
     * geometry_msgs::TransformStamped
       ```cpp
