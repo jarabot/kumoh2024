@@ -38,7 +38,7 @@
 | 16:00 ~ 17:00 | [커스텀 msg와 srv 파일 생성하기](./ROS2/2_Beginner:ClientLibrary/8\)CreatingCustomMsgAndSrvFiles.md), [custom interface 구현하기](./ROS2/2_Beginner:ClientLibrary/9\)implementingCustomInterfaces.md)  -문 |
 | 17:00 ~ 18:00 | [action server/client 작성 (C++)](./ROS2/2_Beginner:ClientLibrary/6\)writingActionServerClient.md), [action server/client 작성 (Python)](./ROS2/2_Beginner:ClientLibrary/7\)writingActionServerClientPython.md)  - 문 |
 | 18:00 ~ 19:00 | 저녁식사  |
-| 19:00 ~ 20:00 | TF - 문 |
+| 19:00 ~ 20:00 | [tf2 소개](./ROS2/5_Intermediate:TF2/tf2_IntroducingTF2.md) - 문 |
 | 20:00 ~ 21:00 | [parameters 사용하기 (C++)](./ROS2/2_Beginner:ClientLibrary/10\)UsingParametersInClassCpp.md), [parameters 사용하기 (Python)](./ROS2/2_Beginner:ClientLibrary/11\)usingParameterPython.md) - 문 |
 | 21:00 ~ 21:30 | Quiz - 문 |
 
