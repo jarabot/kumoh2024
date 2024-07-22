@@ -38,10 +38,10 @@ ros2 run turtlesim turtle_teleop_key
 
 ## 데모 설명
 * ROS graph 구조
-  ![](../../img/tf2_demo_graph.jpg)  
+  ![](../../img/tf2_demo_graph.jpg) 
 * tf2 library는 3개의 프레임(world, turtle1, turtle2)을 생성한다. 
-* tf2 broadcaster는 turtle들의 프레임을 publish한다.
-* tf2 listener는 두 프레임 사이의 차이를 계산하고, 하나의 turtle을 움직여 다른 turtle을 따라가도록 한다. 
+* tf2 broadcaster("/broadcaster1", "/broadcaster2")는 turtle들의 프레임을 publish한다.
+* tf2 listener ("/listener")는 두 프레임 사이의 차이를 계산하고, 하나의 turtle을 움직여 다른 turtle을 따라가도록 한다. 
 
 ## tf2 tools
 tf2_tools을 활용하여 tf2가 이 데모에서 어떻게 사용되고 있는지 살펴보자.
