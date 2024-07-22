@@ -24,10 +24,10 @@ ros2 launch turtle_tf2_py turtle_tf2_demo.launch.py
 ```
 
 ![](https://docs.ros.org/en/humble/_images/turtlesim_follow1.png)
+, 다음 명령어를 실행한다.
 
 위 사진과 같이 두 개의 turtle이 실행되는 것을 볼 수 있다.
-새로운 터미널을 실행한 후, 다음 명령어를 실행한다.
-
+새로운 터미널을 실행한 후
 ```bash
 ros2 run turtlesim turtle_teleop_key
 ```
@@ -37,6 +37,8 @@ ros2 run turtlesim turtle_teleop_key
 위 사진처럼, 키보드를 이용해 하나의 turtle을 움직여보면, 또 다른 turtle이 따라오는 것을 확인 할 수 있다. 
 
 ## 데모 설명
+* ROS graph 구조
+  ![](../../img/tf2_demo_graph.jpg)  
 * tf2 library는 3개의 프레임(world, turtle1, turtle2)을 생성한다. 
 * tf2 broadcaster는 turtle들의 프레임을 publish한다.
 * tf2 listener는 두 프레임 사이의 차이를 계산하고, 하나의 turtle을 움직여 다른 turtle을 따라가도록 한다. 
