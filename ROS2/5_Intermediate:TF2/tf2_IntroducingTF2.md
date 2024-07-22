@@ -37,11 +37,32 @@ ros2 run turtlesim turtle_teleop_key
 위 사진처럼, 키보드를 이용해 하나의 turtle을 움직여보면, 또 다른 turtle이 따라오는 것을 확인 할 수 있다. 
 
 ## 데모 설명
+* 배경 지식
+  * Frame: 로봇의 위치/방향을 측정하는 기준 (xy 좌표계, xyz 좌표계)
+    ![](https://foxglove.dev/images/blog/understanding-ros-transforms/sensors.webp)
+    [이미지 출처: https://foxglove.dev/blog/understanding-ros-transforms](https://foxglove.dev/blog/understanding-ros-transforms)
+
+    * Red arrow (X축) / Red arrow (X축) / Green arrow (X축)    * 
+    * 기준점과 좌표축을 어디에 두느냐에 따라 무수히 많은 frame이 존재한다
+      * World frame (or map frame): 공간 좌표계 (3인칭 시점)
+      * Robot frame: 로봇의 위치를 기준으로 하는 좌표계
+        * "turtle1" frame: turtle1의 입장에서 바라본 좌표계
+        * "turtle2" frame: turtle2의 입장에서 바라본 좌표계
+        * ...
+      * Sensor frame: 로봇에 부착된 센서를 기준으로 하는 좌표계
+      * ...
+    * 서로 다른 frame 사이에는 연관성이 있다
+      * Turtle2가 Turtle1을 따라가려면?
+        * Turtle1의 위치를 Turtle2 기준으로 바꿔서 표현해야 한다
+          * Src frame: "world" frame or "turtle1" frame
+          * Dest frame: "turtle2" frame
+  * Transform: 한 frame을 다른 frame으로 변환하는 것
+  * tf2: ROS2에서 frame 간 변환 기능을 제공하는 라이브러리 
 * ROS graph 구조
   ![](../../img/tf2_demo_graph.jpg) 
-* tf2 library는 3개의 프레임(world, turtle1, turtle2)을 생성한다. 
-* tf2 broadcaster("/broadcaster1", "/broadcaster2")는 turtle들의 프레임을 publish한다.
-* tf2 listener ("/listener")는 두 프레임 사이의 차이를 계산하고, 하나의 turtle을 움직여 다른 turtle을 따라가도록 한다. 
+  * tf2 library는 3개의 프레임(world, turtle1, turtle2)을 생성한다. 
+  * tf2 broadcaster("/broadcaster1", "/broadcaster2")는 turtle들의 프레임을 publish한다.
+  * tf2 listener ("/listener")는 두 프레임 사이의 차이를 계산하고, 하나의 turtle을 움직여 다른 turtle을 따라가도록 한다. 
 
 ## tf2 tools
 tf2_tools을 활용하여 tf2가 이 데모에서 어떻게 사용되고 있는지 살펴보자.
