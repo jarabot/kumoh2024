@@ -191,11 +191,41 @@ tf_listener_ =
   * transform 시점 (tf2::TimePointZero(): buffer에 저장된 가장 최근 transform)
   * Note: exception을 처리하기 위해 try-catch문 사용: 어떤 경우에 예외가 발생할까?
 
-```cpp
-t = tf_buffer_->lookupTransform(
-  toFrameRel, fromFrameRel,
-  tf2::TimePointZero);
-```
+    ```cpp
+    t = tf_buffer_->lookupTransform(
+      toFrameRel, fromFrameRel,
+      tf2::TimePointZero);
+    ```
+
+* turtle2 이동 제어
+    * turtle2 속도 조절을 위한 publisher 선언 
+      ```cpp
+         rclcpp::Publisher<geometry_msgs::msg::Twist>::SharedPtr publisher_{nullptr};
+      ```
+    * turtle2 속도 조절을 위한 publisher 생성 
+      ```cpp
+         // FrameListener class 생성자
+         publisher_ = this->create_publisher<geometry_msgs::msg::Twist>("turtle2/cmd_vel", 1);
+
+      ```
+
+    * Transform data 획득 후, turtle2 속도 명령 출판(publish)
+      ```cpp
+         geometry_msgs::msg::Twist msg;
+
+         static const double scaleRotationRate = 1.0;
+         msg.angular.z = scaleRotationRate * atan2(
+          t.transform.translation.y,
+          t.transform.translation.x);
+
+         static const double scaleForwardSpeed = 0.5;
+         msg.linear.x = scaleForwardSpeed * sqrt(
+          pow(t.transform.translation.x, 2) +
+          pow(t.transform.translation.y, 2));
+
+         publisher_->publish(msg); 
+      ```
+            
 
 ### 1.2 CMakeLists.txt
 learning_tf2_cpp 디렉토리로 이동한 후, CMakeLists.txt에 ros2 run으로 사용하게 될 turtle_tf2_Listener라는 이름의 executable을 추가한다.
@@ -308,5 +338,25 @@ ros2 run turtlesim turtle_teleop_key
 
 정상적으로 실행 되었다면, 화살표 키로 turtle을 움직여 보자(시뮬레이션 창이 아닌, turtle_teleop_key 터미널 창이 활성화 되어야 함). 두 번째 turtle이 첫 번째 turtle을 따라가는 것을 볼 수 있을 것이다.
 
+* 요약
+    * broadcaster1과 broadcaster2는 각각 turtle1, turtle2의 위치를 Transform msg로 출판(publish)한다
+    * listener는 turtle1의 Transform 정보를 획득하여 turtle2 frame기준으로 변환하였다
+    * listener는 turtle2 기준으로 turtle1의 위치와 방향 정보를 획득했다
+    * listener는 turtle2에게 turtle1을 추격하도록 명령을 내렸다 ("turtle2/cmd_vel" Topic msg 출판)
+    * 
+
+## Quiz
+* listener code 중 lookupTransform() 호출 구문을 아래와 같이 수정하자.
+   ```cpp
+    t = tf_buffer_->lookupTransform(
+      toFrameRel, fromFrameRel,
+      this->get_clock()->now());
+      //tf2::TimePointZero);
+    ```
+  * 위 코드를 빌드한 후, 실행하여 결과를 확인하자. 이전과 결과가 동일한가? 그렇지 않다면 그 이유는?
+ 
+
 ## 요약
 이번 튜토리얼에서는 프레임 transformation을 얻기 위해 tf2를 사용하는 법을 학습했다. 또한 Introduting tf2 튜토리얼에서 실행했던 데모를 완성했다.
+
+
