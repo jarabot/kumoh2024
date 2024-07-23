@@ -39,8 +39,8 @@
 | 17:00 ~ 18:00 | [action server/client 작성 (C++)](./ROS2/2_Beginner:ClientLibrary/6\)writingActionServerClient.md), [action server/client 작성 (Python)](./ROS2/2_Beginner:ClientLibrary/7\)writingActionServerClientPython.md)  - 문 |
 | 18:00 ~ 19:00 | 저녁식사  |
 | 19:00 ~ 20:00 | [tf2 소개](./ROS2/5_Intermediate:TF2/tf2_IntroducingTF2.md), [static broadcaster 작성하기(C++)](./ROS2/5_Intermediate:TF2/tf2_WritingAStaticBroadcaster_C++.md), [static broadcaster 작성하기(Python)](./ROS2/5_Intermediate:TF2/tf2_WritingAStaticBroadcaster_Python.md), [broadcaster 작성하기(C++)](./ROS2/5_Intermediate:TF2/tf2_WritingABroadcaster_C++.md), [broadcaster 작성하기(Python)](./ROS2/5_Intermediate:TF2/tf2_WritingABroadcaster_Python.md) - 문 |
-| 20:00 ~ 21:00 | [parameters 사용하기 (C++)](./ROS2/2_Beginner:ClientLibrary/10\)UsingParametersInClassCpp.md), [parameters 사용하기 (Python)](./ROS2/2_Beginner:ClientLibrary/11\)usingParameterPython.md) - 문 | 
-| 21:00 ~ 21:30 | Quiz - 문 |
+| 20:00 ~ 21:00 | [listener 작성하기(C++)](./ROS2/5_Intermediate:TF2/tf2_WritingAListener_C++.md), [listener 작성하기(Python)](./ROS2/5_Intermediate:TF2/tf2_WritingAListener_Python.md) - 문 | 
+| 21:00 ~ 21:30 | [parameters 사용하기 (C++)](./ROS2/2_Beginner:ClientLibrary/10\)UsingParametersInClassCpp.md), [parameters 사용하기 (Python)](./ROS2/2_Beginner:ClientLibrary/11\)usingParameterPython.md) - 문 |
 
 * [개발 환경 설정 확인](./ROS2/1_Beginner:CLITools/1_Configuring%20environment.md) - 신
 * [CLI 도구 사용법 Quick 리뷰](./ROS2/1_Beginner:CLITools/8_usingRqt_console.md) - 신
