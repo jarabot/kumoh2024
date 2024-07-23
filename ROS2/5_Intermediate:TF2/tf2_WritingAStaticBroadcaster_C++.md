@@ -9,6 +9,11 @@
 * static coordinate frame을 broadcast하는 방법 배우기.
 
 ## 배경지식
+* Static transform vs. Regular transform
+  * Static transform: 기준 프레임과 대상 프레임 간의 상대적인 위치가 변하지 않는다 (ex 로봇 프레임 - 센서 프레임)
+    * Transform Topic을 한 번만 전송하면 된다 ("/static_tf")
+  * Regular transform: 시간이 지남에 따라 기준 프레임과 대상 프레임 간의 상대적인 위치가 변한다 (ex 로봇 프레임 - 로봇팔 프레임)
+    * Transform Topic을 주기적으로 전송해야 한다 ("/tf")
 static transform을 publish하는 것은, 로봇의 base와 센서 및 움직임이 없는 부분 사이에 관계를 정의할 때 유용하다. 예를 들면, 레이저 스캐너의 중앙에 위치한 프레임에서 레이저 스캔 측정값을 추론하는 것이 가장 쉽다.
 
 이 튜토리얼에서는 코드를 작성하여 static transform을 publish하는 방법과 static_transform_publisher라는 command line tool 사용법을 다룬다.
@@ -20,13 +25,28 @@ static transform을 publish하는 것은, 로봇의 base와 센서 및 움직임
 ### 1. 패키지 만들기
 먼저, 이 튜토리얼 및 다음 튜토리얼에서 사용될 패키지를 생성할 것이다. 패키지의 이름은 learning_tf2_cpp이며 의존성 패키지들은 geometry_msgs, rclcpp, tf2, tf2_ros, turtlesim이 있다.
 
-새로운 터미널을 실행하고 ROS2 환경을 source한 후, 워크스페이스의 src폴더로 이동한다. 그 다음 아래의 명령어를 실행해 새로운 패키지를 생성한다.
+새로운 터미널을 실행하고 ROS2 환경을 source한다
 ```bash
-ros2 pkg create --build-type ament_cmake --dependencies geometry_msgs rclcpp tf2 tf2_ros turtlesim -- learning_tf2_cpp
+   source /opt/ros/humble/setup.bash
+```
+워크스페이스의 src폴더로 이동한다. 
+```bash
+   cd ~/ros_ws
+```
+
+아래의 명령어를 실행해 새로운 패키지를 생성한다.
+```bash
+   ros2 pkg create --build-type ament_cmake --dependencies geometry_msgs rclcpp tf2 tf2_ros turtlesim -- learning_tf2_cpp
 ```
 
 ### 2. static broadcaster 노드 작성하기
-먼저 소스파일을 작성해보자. 아래의 명령어로 src/learning_tf2_cpp/src 위치에 static broadcaster 코드 예제를 다운로드 해보자.
+
+생성된 프로젝트의 src 디렉토리로 이동한다
+```bash
+   cd ~/ros_ws/src/learning_tf2_cpp/src
+```
+
+아래의 명령어로 static broadcaster 코드 예제를 다운로드 한다
 
 ```bash
 wget https://raw.githubusercontent.com/ros/geometry_tutorials/ros2/turtle_tf2_cpp/src/static_turtle_tf2_broadcaster.cpp
@@ -128,7 +148,8 @@ int main(int argc, char * argv[])
 #include "tf2_ros/static_transform_broadcaster.h"
 ```
 
-StaticFramePublisher클래스는 생성자를 통해 static_turtle_tf2_broadcaster라는 이름으로 노드를 초기화 한다. 그 후, static transformation을 전송할 StaticTransformBroadcaster가 생성된다.
+* StaticFramePublisher클래스 생성자에서 노드 초기화 ("static_turtle_tf2_broadcaster")
+* static transformation을 전송할 StaticTransformBroadcaster가 생성된다.
 
 ```cpp
 explicit StaticFramePublisher(char * transformation[])
