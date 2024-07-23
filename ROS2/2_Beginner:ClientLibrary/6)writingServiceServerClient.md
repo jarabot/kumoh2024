@@ -14,11 +14,12 @@
 * 생성한 service와 client nodes 실행하기
 
 ## 배경지식
+![](https://camo.githubusercontent.com/25ee16feb8cdde5019beac00ef777b9f7a68f0bbb97c7b0b41c10f9b59729961/68747470733a2f2f646f63732e726f732e6f72672f656e2f68756d626c652f5f696d616765732f536572766963652d53696e676c6553657276696365436c69656e742e676966)
 * nodes가 services를 사용하여 통신하는 경우
   * data에 대한 request를 보내는 node
     * client node
   * request에 대한 response를 보내는 node
-    * service node
+    * server node
 * request와 response 구조
   * .srv 파일로 결정
 
@@ -33,10 +34,24 @@
 
 ## 실습
 ###  1. package 생성하기
-* 새 터미널 열기
-* ROS2 환경 source 하기
-* ros2 명령 동작 확인하기
-* 이전 튜터리얼에서 ros2_ws 디렉토리로 가기
+* 새 터미널 실행 후, ROS2 환경 source 하기
+```bash
+source /opt/ros/humble/setup.bash
+```
+* 위 명령을 아래와 같이 ~/.bashrc에 추가하면 터미널을 실행할 때마다 자동으로 source 명령이 수행된다
+```bash
+echo 'source /opt/ros/humble/setup.bash' >> ~/.bashrc
+```
+* ros2 명령 동작 확인하기 
+```bash
+   ros2 pkg list
+```
+
+* src 디렉토리로 이동
+```bash
+cd ~/ros_ws/src
+```
+
 * packages는 반드시 src 디렉토리에 생성해야만 한다. (workspace에 하지 않도록 주의!)
 * ros2_ws/src로 가서 새로운 package 생성하기
 ```
@@ -46,6 +61,7 @@ ros2 pkg create --build-type ament_cmake cpp_srvcli --dependencies rclcpp exampl
 
 * --dependencies 인자를 사용하면 자동으로 package.xml과 CMakeLists.txt에 필요한 의존성을 추가시킨다.
 * example_interfaces package는 request와 response에 사용할 .srv 파일을 포함하고 있다.
+* example_interfaces::srv::AddTwoInts.srv
 ```
 int64 a
 int64 b
@@ -98,6 +114,11 @@ int main(int argc, char **argv)
 ```
 ### 2.1 code 살펴보기
 * 맨 위에 2개 #include 구문은 내가 작성한 package가 의존하는 부분이다.
+```c++
+#include "rclcpp/rclcpp.hpp"
+#include "example_interfaces/srv/add_two_ints.hpp"
+```
+
 * add 함수는 request로 받은 2개 정수를 더하고 그 합을 response로 사용한다. log를 통해서 status를 콘솔에 알린다.
 ```c++
 void add(const std::shared_ptr<example_interfaces::srv::AddTwoInts::Request> request,
