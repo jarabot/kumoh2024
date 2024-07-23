@@ -29,7 +29,7 @@
 | 시간   |      내용      |
 |----------|:-------------:|
 | 09:30 ~ 10:00 | [인사, 목표, Q&A](https://docs.google.com/presentation/d/1-fi3zFYycrmC-Ef20UTDN0_DRWQdzVikaOA5hjFivsw/edit#slide=id.p)  - 신 |
-| 10:00 ~ 11:00 | ROS 2 Trend (ROSCon)  - 신|
+| 10:00 ~ 11:00 | [ROS 2 Trend](https://github.com/jarabot/kumoh2024/blob/main/ROS2/README.md#ros-trend) (ROSCon)  - 신|
 | 11:00 ~ 12:00 | [개발 환경 설정 및 확인](./ROS2/README.md) - 신 |
 | 12:00 ~ 13:00 | 점심식사 |
 | 13:00 ~ 14:00 | [CLI 도구 사용법 Quick 리뷰](./ROS2/1_Beginner:CLITools/8_usingRqt_console.md) , [ROS 2 핵심 개념 Quick 리뷰](./ROS2/1_Beginner:CLITools/3_nodes.md) - 신 |
