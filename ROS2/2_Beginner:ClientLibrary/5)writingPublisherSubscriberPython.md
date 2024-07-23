@@ -112,10 +112,11 @@ entry_points={
 * setup.cfg
 ```
 [develop]
-script-dir=$base/lib/py_pubsub
+script_dir=$base/lib/py_pubsub
 [install]
-install-scripts=$base/lib/py_pubsub
+install_scripts=$base/lib/py_pubsub
 ```
+
 * setuptool이 실행될때 lib 내에 실행자를 넣으라고 지시
   * 결국 ros2 run 실행시 path를 제대로 찾게 해주는 역할
 
@@ -230,4 +231,4 @@ ros2 run py_pubsub listener
 
 
 # Quiz 
-정수를 1씩 증가시켜 Publisher에서 Subscriber로 전송하는 pub-sub 작성하세요 
+정수(Int32)를 1씩 증가시켜 Publisher에서 Subscriber로 전송하는 pub-sub 작성하세요 
