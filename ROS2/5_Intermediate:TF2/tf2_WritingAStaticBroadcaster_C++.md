@@ -31,7 +31,7 @@ static transform을 publish하는 것은, 로봇의 base와 센서 및 움직임
 ```
 워크스페이스의 src폴더로 이동한다. 
 ```bash
-   cd ~/ros_ws
+   cd ~/ros_ws/src
 ```
 
 아래의 명령어를 실행해 새로운 패키지를 생성한다.
