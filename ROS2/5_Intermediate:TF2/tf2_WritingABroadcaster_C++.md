@@ -6,10 +6,7 @@
 1. 요약
 
 ## 목표
-* 로봇의 state를 broadcast하는 방법 배우기.
-
-## 배경지식
-이번 및 다음 튜토리얼에서는, Introducing TF2 튜토리얼에 나왔던 데모를 재현하는 코드를 작성할 것이다. 그 다음 튜토리얼에서는, transformation lookups의 timeout 및 time travel등과 같이 tf2의 고급 기능을 이 데모에 적용해 볼 것이다.
+* 로봇의 프레임 정보를 Transform으로 broadcast하기
 
 ## 사전 준비
 * ROS2 동작 원리.
@@ -19,8 +16,12 @@
 
 ## 실습
 ### 1. broadcaster 노드 작성하기
-소스 파일을 만들어 보자. learning_tf2_cpp/src 위치에 아래의 명령어로 broadcaster 코드 예제를 다운로드 받자.
 
+* 새 터미널 실행 후, learning_tf2_cpp/src 로 이동
+```bash
+   cd ~/ros_ws/src/learning_tf2_cpp/src
+```
+* broadcaster 코드 예제 다운로드 
 ```bash
 wget https://raw.githubusercontent.com/ros/geometry_tutorials/ros2/turtle_tf2_cpp/src/turtle_tf2_broadcaster.cpp
 ```
@@ -107,27 +108,25 @@ int main(int argc, char * argv[])
 }
 ```
 
-먼저 turtle의 자세를 publish하는 코드를 보자. 우리는 turtle의 이름을 명시하는 turtlename이라는 파라미터를 정의하고 가져온다.
+* turtlesim node의 pose 정보를 구독하기 위해, turtlename 파라미터 설정
 
 ```cpp
-turtlename_ = this->declare_parameter<std::string>("turtlename", "turtle");
+    turtlename_ = this->declare_parameter<std::string>("turtlename", "turtle");
 ```
-
-그 후, turtleX/pose 토픽을 subscribe하고, 메세지를 받을 때 마다 handle_turtle_pose함수를 실행한다.
+* turtlesim node의 pose Topic을 구독
+* 이후, pose Topic을 수신하면 handle_turtle_pose() 콜백 함수가 실행된다
 
 ```cpp
-subscription_ = this->create_subscription<turtlesim::msg::Pose>(
+  subscription_ = this->create_subscription<turtlesim::msg::Pose>(
   topic_name, 10,
   std::bind(&FramePublisher::handle_turtle_pose, this, _1));
 ```
 
-콜백함수에서는 먼저, TransformStamped 오브젝트를 생성하고, 다음과 같은 메타데이터를 채운다.
+* 콜백함수에서는 먼저, TransformStamped 오브젝트를 생성하고, 다음과 같은 메타데이터를 채운다.
 
 1. 타임스탬프 : 현재 시간을 적용한다.
 1. 부모 프레임의 이름 : world
 1. 자식 프레임의 이름 : turtleX
-
-turtle 자세 메세지에 대한 핸들러 함수는 turtle 의 translation과 rotation을 broadcast하고 그것을 world 프레임에 대한 turtleX 프레임의 transform으로 publish한다.
 
 ```cpp
 geometry_msgs::msg::TransformStamped t;
@@ -139,7 +138,7 @@ t.header.frame_id = "world";
 t.child_frame_id = turtlename_.c_str();
 ```
 
-그리고 turtle의 translation과 rotation을 broadcast하기위해, 아래와 같이 3D turtle 자세 정보를 3D transform으로 복사한다.
+* 수신된 pose 정보로부터, transform의 각 변수에 값을 할당한다
 
 ```cpp
 // Turtle only exists in 2D, thus we get x and y translation
@@ -159,7 +158,7 @@ t.transform.rotation.z = q.z();
 t.transform.rotation.w = q.w();
 ```
 
-마지막으로 이 transform을 publish할 TransformBroadcaster의 sendTransfrom 메서드에 전달한다.
+TransformBroadcaster::sendTransfrom() 메서드 호출
 
 ```cpp
 // Send the transformation
@@ -167,7 +166,8 @@ tf_broadcaster_->sendTransform(t);
 ```
 
 ### 1.2 CMakeLists.txt
-learning_tf2_cpp 디렉토리로 이동한 후, CMakeLists.txt에 ros2 run으로 사용하게 될 turtle_tf2_broadcaster라는 이름의 executable을 추가한다.
+* 코드 편집기로 learning_tf2_cpp의 CMakeLists.txt 열기
+* 실행자 추가 - turtle_tf2_broadcaster
 
 ```cmake
 add_executable(turtle_tf2_broadcaster src/turtle_tf2_broadcaster.cpp)
@@ -181,7 +181,7 @@ ament_target_dependencies(
 )
 ```
 
-마지막으로, ros2 run이 executable을 찾을 수 있도록 install(TARGETS...)을 추가한다.
+* install(TARGETS...) 추가
 
 ```cmake
 install(TARGETS
@@ -189,8 +189,22 @@ install(TARGETS
     DESTINATION lib/${PROJECT_NAME})
 ```
 ### 2. 런치파일 작성하기
-이제 런치파일을 생성해보자. launch 폴터 안에 turtle_tf2_demo.launch.py라는 이름으로 파일을 생성하고 아래 코드를 집어 넣자.
+* 새 터미널 실행 후, 프로젝트 디렉토리로 이동
+```bash
+    cd ~/ros_ws/src/learning_tf2_cpp
+```
+* launch 디렉토리 생성
+```bash
+    mkdir launch
+```
 
+* launch 파일 생성
+```bash
+    touch turtle_tf2_demo.launch.py
+```
+
+* 코드 편집기로 turtle_tf2_demo.launch.py 열기
+* 아래 코드 복사
 ```python
 from launch import LaunchDescription
 from launch_ros.actions import Node
@@ -215,15 +229,16 @@ def generate_launch_description():
 ```
 
 ### 2.1 코드 설명
-먼저 launch, launch_ros 패키지로부터 필요한 모듈을 import 한다. launch 패키지는 
-generic launching 프레임워크(ROS2 전용이 아님)이며, launch_ros 패키지는 node와 같은 ROS2에 관련된 것들을 가지고 있다.
+* launch, launch_ros 패키지로부터 필요한 모듈을 import
+  * launch 패키지: generic launching 프레임워크(ROS2와 별개)
+  * launch_ros 패키지: node와 같은 ROS2에 관련 내용 포함
 
 ```python
 from launch import LaunchDescription
 from launch_ros.actions import Node
 ```
 
-다음은, turtlesim 시뮬레이션을 실행하고, turtle_tf2_broadcaster노드를 사용해서 turtle1 상태를 broadcast한다.
+* turtlesim & turtle_tf2_broadcaster 실행
 
 ```python
 Node(
@@ -242,7 +257,8 @@ Node(
 ```
 
 ### 2.2 Add dependencies
-learning_tf2_cpp 디렉토리로 이동해서 package.xml을 수정하자. launch의 import문에 해당하는 의존성을 추가해준다.
+* 코드 편집기로 learning_tf2_cpp 디렉토리 내 package.xml 열기
+* launch의 import문에 해당하는 의존성 추가
 
 ```xml
 <exec_depend>launch</exec_depend>
@@ -250,7 +266,7 @@ learning_tf2_cpp 디렉토리로 이동해서 package.xml을 수정하자. launc
 ```
 
 ### 2.3 CMakeLists.txt
-CMakeLists.txt를 다시 열고, launch 폴더에 있는 런치 파일들이 설치될 수 있도록, 다음 줄을 추가해 주자.
+* CMakeLists.txt 에 다음 내용 추가 
 
 ```cmake
 install(DIRECTORY launch
@@ -258,13 +274,13 @@ install(DIRECTORY launch
 ```
 
 ### 3. 빌드
-빠진 의존성이 있는지 체크하기 위해 워크스페이스의 루트 위치에서 rosdep을 실행해 주자.
+* 빠진 의존성이 있는지 체크하기 위해 워크스페이스의 루트 위치에서 rosdep을 실행해 주자.
 
 ```bash
 rosdep install -i --from-path src --rosdistro humble -y
 ```
+learning_tf2_cpp package 빌드 
 
-그리고 업데이트된 패키지를 빌드해 주자.
 
 ```bash
 colcon build --packages-select learning_tf2_cpp
