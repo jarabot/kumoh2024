@@ -42,7 +42,7 @@ ros2 run turtlesim turtle_teleop_key
     ![](https://foxglove.dev/images/blog/understanding-ros-transforms/sensors.webp)
     [이미지 출처: https://foxglove.dev/blog/understanding-ros-transforms](https://foxglove.dev/blog/understanding-ros-transforms)
 
-    * Red arrow (X축) / Blue arrow (Y축) / Green arrow (Z축)    * 
+    * Red arrow (X축) / Red arrow (Y축) / Green arrow (Z축)    * 
     * 기준점과 좌표축을 어디에 두느냐에 따라 무수히 많은 frame이 존재한다
       * World frame (or map frame): 공간 좌표계 (3인칭 시점)
       * Robot frame (base_link): 로봇의 위치를 기준으로 하는 좌표계
@@ -100,13 +100,14 @@ tf2_echo는 broadcast되고 있는 임의의 두 프레임간의 transform을 �
 ros2 run tf2_ros tf2_echo [reference_frame] [target_frame]
 ```
 
-현재 터미널에서 아래 명령어를 실행하여, turtlr2의 프레임을 turtle1 프레임으로 변환하는 transform을 출력하자
+현재 터미널에서 아래 명령어를 실행하자
 
 ```bash
 ros2 run tf2_ros tf2_echo turtle2 turtle1
 ```
 
 명령어를 실행하면 아래와 같이 출력된 transform을 확인할 수 있다.
+(기준 프레임: turtle2, 대상 프레임: turtle1)
 
 ```
 At time 1670314455.630744254
