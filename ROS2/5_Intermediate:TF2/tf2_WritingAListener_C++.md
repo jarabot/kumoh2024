@@ -18,7 +18,13 @@
 
 ## 실습
 ### 1. Listener 노드 작성하기
-소스 파일을 만들어 보자. learning_tf2_cpp/src 위치에 아래의 명령어로 listener 코드 예제를 다운로드 받자.
+
+* 새 터미널 실행 후, learning_tf2_cpp/src 위치로 이동
+```bash
+    cd ~/ros2_ws/src/learning_tf2_cpp/src
+```
+
+* listener 코드 예제 다운로드 
 
 ```bash
 wget https://raw.githubusercontent.com/ros/geometry_tutorials/ros2/turtle_tf2_cpp/src/turtle_tf2_listener.cpp
@@ -166,24 +172,24 @@ int main(int argc, char * argv[])
 turtle을 spawn하는 서비스의 동작을 이해하기 위해, writing a simple service and client(C++) 튜토리얼을 참고하자.
 이제 프레임 transformation에 접근하는 코드를 보자. tf2_ros는 transform의 수신을 더 쉽게 만들어 주는 TransformListener 헤더 파일 구현을 포함하고 있다.
 
+* TransformListener class 사용을 위한 헤더파일 포함
+
 ```cpp
 #include "tf2_ros/transform_listener.h"
 ```
 
-아래에서는, TransformListener를 생성한다. Listener가 생성되면, tf2 transformationㅇ르 수신하기 시작하고, 10초 동안 버퍼에 유지시킨다.
+* TransformListener 객체 생성
+  * 수신된 transform data는 tf_buffer_에 저장됨 
 
 ```cpp
 tf_listener_ =
   std::make_shared<tf2_ros::TransformListener>(*tf_buffer_);
 ```
-
-마지막으로, 특정 transformation에 대해 listener를 query한다. 그러기 위해, 아래의 인자들로 lookup_transform 메소드를 호출한다.
-
-1. Target frame
-1. Source frame
-1. transform한 시점
-
-tf2::TimePointZero()를 사용하면 최신 transform을 얻을 수 있다. 또한 exception을 처리하기 위해 try-catch문으로 랩핑된다.
+* lookupTransform() 함수를 호출하여 최신 transform data 획득
+  * Target frame
+  * Source frame
+  * transform 시점 (tf2::TimePointZero(): buffer에 저장된 가장 최근 transform)
+  * Note: exception을 처리하기 위해 try-catch문 사용: 어떤 경우에 예외가 발생할까?
 
 ```cpp
 t = tf_buffer_->lookupTransform(
@@ -278,14 +284,18 @@ colcon build --packages-select learning_tf2_cpp
 ```
 
 ### 4. 실행
-새로운 터미널을 열고, setup 파일을 source 한다.
+* 새로운 터미널을 열고, ros_ws 로 이동
+```bash
+   cd ~/ros_ws
+```
+
+* setup 파일을 source 한다.
 
 ```bash
 . install/setup.bash
 ```
 
-이제 전체 turtle demo를 실행할 준비가 되었다.
-
+* 프로그램 실행
 ```bash
 ros2 launch learning_tf2_cpp turtle_tf2_demo.launch.py
 ```
