@@ -58,3 +58,17 @@ ros2 topic pub  /turtlesim2/turtle1/cmd_vel geometry_msgs/msg/Twist "{linear: {x
 * 결과
 
 ![](https://docs.ros.org/en/humble/_images/turtlesim_multisim_spin.png)
+
+# Quiz
+
+* mylaunch.py 파일 생성하기 (Vsiual Studio Code로 열기)
+```bash
+code ~/mylaunch.py
+```
+
+* 이 파일 내에 3개 turtle을 생성하도록 구현하기(위에 multisim.launch.py 참고)
+
+* 실행하기
+```bash
+ros2 launch ~/mylaunch.py
+```
