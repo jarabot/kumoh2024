@@ -79,7 +79,7 @@ int64 sum
 <license>Apache License 2.0</license>
 ```
 
-###  2. service node 작성하기
+###  2. server node 작성하기
 * ros2_ws/src/cpp_srvcli/src 디렉토리 내부에 add_two_ints_server.cpp 파일을 새로 생성하자. 
 * 아래 내용을 add_two_ints_server.cpp 파일에 넣자.
 ```c++
@@ -325,7 +325,18 @@ ros2 run cpp_srvcli client 2 3
 a: 2 b: 3
 [INFO] [rclcpp]: sending back response: [5]
 ```
-
+## Quiz
+* 두 수를 더하는 연산은 논리적으로 간단하지만 만약 두 수의 합이 int64 타입으로 표현할 수 있는 범위를 벗어나면 오버플로우가 발생할 수 있다.
+* 두 수의 합을 구하는 과정에서 오버플로우가 발생했는지 판단하여 예외 처리를 하도록 server 코드를 수정하고 그 동작을 테스트하세요.
+   * add() 함수 동작
+      * 두 수의 합이 각각의 입력값보다 클 때 (오버플로우 발생 안 함): sum 에 두 수의 합 저장
+      * 두 수의 합이 둘 중 하나의 입력값보다 작을 때 (오버플로우 발생): sum에 64bit 정수의 최대값 대입
+         * (response->sum = std::numeric_limits<long long>::max(); )  
+* cpp_srvcli package 재 빌드 후, server node와 client 재실행, 결과 확인
+  ```bash
+     ros2 run cpp_srvcli client 300000000000000000   4000000000000000000000000000
+     [INFO] [1721750867.367789433] [rclcpp]: Sum: 9223372036854775807 
+  ```
 ## 요약
 * 2개 nodes를 생성하여 service를 이용하여 request와 response data를 주고 받았다. 
 * 의존성과 실행자를 package 설정 파일에 추가하여 빌드하였다.
