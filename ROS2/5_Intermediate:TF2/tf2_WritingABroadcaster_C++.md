@@ -6,7 +6,7 @@
 1. 요약
 
 ## 목표
-* 로봇의 프레임 정보를 Transform으로 broadcast하기
+* 로봇의 pose(위치/방향) 정보를 Transform으로 broadcast하기
 
 ## 사전 준비
 * ROS2 동작 원리.
@@ -107,6 +107,8 @@ int main(int argc, char * argv[])
   return 0;
 }
 ```
+
+* Q. turtlesim node의 위치/방향을 어떻게 추적할 수 있을까?
 
 * turtlesim node의 pose 정보를 구독하기 위해, turtlename 파라미터 설정
 
