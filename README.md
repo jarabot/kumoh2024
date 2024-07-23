@@ -32,7 +32,7 @@
 | 10:00 ~ 11:00 | [ROS 2 Trend](https://github.com/jarabot/kumoh2024/blob/main/ROS2/README.md#ros-trend) (ROSCon)  - 신|
 | 11:00 ~ 12:00 | [개발 환경 설정 및 확인](./ROS2/README.md) - 신 |
 | 12:00 ~ 13:00 | 점심식사 |
-| 13:00 ~ 14:00 | [CLI 도구 사용법 Quick 리뷰](./ROS2/1_Beginner:CLITools/README.md) , [ROS 2 핵심 개념 Quick 리뷰](./ROS2/1_Beginner:CLITools/3_nodes.md) - 신 |
+| 13:00 ~ 14:00 | [CLI 도구 사용법 및 핵심 개념 Quick 리뷰](./ROS2/1_Beginner:CLITools/README.md) - 신 |
 | 14:00 ~ 15:00 | [pub/sub 구현 C++](./ROS2/2_Beginner:ClientLibrary/4\)writingPublisherSubscriber.md), [pub/sub 구현 Python](./ROS2/2_Beginner:ClientLibrary/5\)writingPublisherSubscriberPython.md) - 신 |
 | 15:00 ~ 16:00 | [service 구현 C++](./ROS2/2_Beginner:ClientLibrary/6\)writingServiceServerClient.md), [service 구현 Python](./ROS2/2_Beginner:ClientLibrary/7\)writingActionServerClientPython.md)  - 문 |
 | 16:00 ~ 17:00 | [커스텀 msg와 srv 파일 생성하기](./ROS2/2_Beginner:ClientLibrary/8\)CreatingCustomMsgAndSrvFiles.md), [custom interface 구현하기](./ROS2/2_Beginner:ClientLibrary/9\)implementingCustomInterfaces.md)  -문 |
