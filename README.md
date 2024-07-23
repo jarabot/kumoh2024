@@ -28,7 +28,7 @@
 
 | 시간   |      내용      |
 |----------|:-------------:|
-| 09:30 ~ 10:00 | 인사, 목표, Q&A  - 신 |
+| 09:30 ~ 10:00 | [인사, 목표, Q&A](https://docs.google.com/presentation/d/1-fi3zFYycrmC-Ef20UTDN0_DRWQdzVikaOA5hjFivsw/edit#slide=id.p)  - 신 |
 | 10:00 ~ 11:00 | ROS 2 Trend (ROSCon)  - 신|
 | 11:00 ~ 12:00 | [개발 환경 설정 및 확인](./ROS2/README.md) - 신 |
 | 12:00 ~ 13:00 | 점심식사 |
