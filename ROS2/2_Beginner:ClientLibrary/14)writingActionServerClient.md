@@ -241,6 +241,10 @@ RCLCPP_COMPONENTS_REGISTER_NODE(action_tutorials_cpp::FibonacciActionServer)
        }
     ```
 * execute(): Action 실행 함수
+ * 요청된 order에 해당하는 Fibonacci 순열 계산
+ * 계산 과정에서 cancel 메시지를 받으면 계산 중지 후 반환
+ * 계산 과정에서 feedback 메시지 생성 및 전송
+ * 계산 완료 후 result 메시지 저장 
   ```cpp
         void execute(const std::shared_ptr<GoalHandleFibonacci> goal_handle)
   {
