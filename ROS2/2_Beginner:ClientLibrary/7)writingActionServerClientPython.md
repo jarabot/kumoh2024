@@ -1,4 +1,4 @@
-# service와 client 작성하기 (Python)
+# server와 client 작성하기 (Python)
 1. 개요
 2. 실습
    1. package 생성하기
@@ -46,9 +46,9 @@ description='Python client server tutorial',
 license='Apache License 2.0',
 ```
 
-### 2-2 service node 작성하기
+### 2-2 server node 작성하기
 * ros2_ws/src/py_srvcli/py_srvcli/service_member_function.py 파일 만들기
-* service_member_function.py 파일 열어서 아래 코드 붙여넣기
+* server_member_function.py 파일 열어서 아래 코드 붙여넣기
 ```python
 from example_interfaces.srv import AddTwoInts
 
@@ -88,7 +88,7 @@ if __name__ == '__main__':
 * ros2_ws/src/py_srvcli/setup.py 파일 열기
 * 'console_scripts': 부분에 아래 추가하기
 ```
-'service = py_srvcli.service_member_function:main',
+'server = py_srvcli.service_member_function:main',
 ```
 
 ### 2-3 client node 작성하기
@@ -140,7 +140,7 @@ if __name__ == '__main__':
 ```python
 entry_points={
     'console_scripts': [
-        'service = py_srvcli.service_member_function:main',
+        'server = py_srvcli.service_member_function:main',
         'client = py_srvcli.client_member_function:main',
     ],
 },
@@ -158,10 +158,10 @@ cd ~/ros2_ws
 colcon build --packages-select py_srvcli
 ```
 
-* service node 실행하기 - 새 터미널 열고 아래 명령 실행
+* server node 실행하기 - 새 터미널 열고 아래 명령 실행
 ```bash
 source install/setup.bash
-ros2 run py_srvcli service
+ros2 run py_srvcli server
 ```
 
 * client node 실행하기 - 새 터미널 열고 아래 명령 실행
