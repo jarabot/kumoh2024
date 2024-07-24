@@ -1,10 +1,10 @@
 # Action server & client 구현하기
-* 1. 소개
-* 2. action_tutorials_cpp package 생성
-* 3. action server node 작성
-* 4. action client node 작성
-* 5. 빌드 및 실행
-* Quiz
+1. 소개
+2. action_tutorials_cpp package 생성
+3. action server node 작성
+4. action client node 작성
+5. 빌드 및 실행
+
 
 
 ## 1. 소개
