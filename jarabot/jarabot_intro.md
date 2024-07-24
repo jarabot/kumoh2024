@@ -9,7 +9,7 @@
 * ROS 기반 자율주행 플랫폼
   * Jarabot 구성요소
     * Raspberry Pi 4 (ROS2 프로그램 실행)
-    * Arduino Nano (모터 제어)
+    * Arduino Nano (모터 제어) 
     * LIDAR: 스캔 및 맵 생성
     * Left/right motors (& wheels): Jarabot 이동
     * 전원 공급 보드: battery 전원을 Raspberry Pi, left/right motor에 제공
