@@ -6,8 +6,8 @@
    3. client node 작성하기
    4. 빌드 및 실행
 ## 1. 개요
-* Python으로 service와 client nodes를 생성하고 빌드하기
-* service를 사용해서 nodes간 통신 구현 방법 이해
+* Python으로 server와 client nodes를 생성하고 빌드하기
+* service를 사용g한 nodes간 통신 구현 방법 이해
 * client node
   * request를 보내는 node
 * server node
