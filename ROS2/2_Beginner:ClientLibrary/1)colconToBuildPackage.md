@@ -50,7 +50,7 @@ source /opt/ros/humble/setup.bash
 ### 2-1-4 workspace 빌드하기
 * 빌드하기 명령 실행
 ```bash
-colcon build --symlink-install
+colcon build --parallel-workers 2
 ```
   * --symlink-install : install된 파일 중에서 변경된 파일을 변경 (python 파일이나 리소스 파일)
 
