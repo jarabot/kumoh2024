@@ -1,9 +1,8 @@
 # Jarabot 소개
 * 1. Jarabot
 * 2. Jarabot 이동 방향
-* 3. Jarabot Power On/Off
-* 4. 모터 제어를 위한 Pin 연결
-* 5. 안전 유의사항
+* 3. 모터 제어를 위한 Pin 연결
+* 4. 안전 유의사항
  
 # 1. Jarabot
 * ROS 기반 자율주행 플랫폼
@@ -37,20 +36,15 @@
     
   ![](./jarabot_move_direction.jpg) 
 
-# 3. Jarabot Power On/Off
-* Jarabot 전원 스위치
-  * Jarabot 전진 방향을 기준으로 앞쪽 (on), 뒤쪽 (off)
-  * 배터리 교체 시, 먼저 전원 스위치를 off 상태로 바꿀 것  
-  ![](./jarabot_power_onoff.jpg) 
 
-# 4. 모터 제어를 위한 Pin 연결
+# 3. 모터 제어를 위한 Pin 연결
 * Arduino 보드를 통해 Motor 동작을 제어한다
 * Arduino - Motor cable 연결
   ![Pin map](./jarabot_pin_map.jpg)  
   ![Pin 연결](./jarabot_pin_connect.jpg)
 
 
-# 5. 안전 유의사항
+# 4. 안전 유의사항
 * 배터리 연결 시, 반드시 Jarabot 본체 전원 스위치를 OFF 상태로 만들고 연결한다 
 * Jarabot 이동 시 떨어뜨리거나 큰 충격이 가지 않도록 유의한다 (특히 배터리 장착 시)
 * Jarabot 이동 시, 바퀴를 제외한 원판 부분을 잡고 이동한다 (부상 방지)
