@@ -14,6 +14,7 @@
 * [개발문서](https://github.com/ros-planning/navigation2/tree/main/doc)
   * [개요 문서](https://github.com/ros-planning/navigation2/blob/main/doc/design/Navigation_2_Overview.pdf)
 
+* [Navigation Concept 정리](https://docs.google.com/presentation/d/1GWPT-RHlZeoIxHoeNLCnQps3f9kI6uaJEGnrX0cnLSM/edit#slide=id.p)
 
 ## 구성
 1. BT Navigator Server
