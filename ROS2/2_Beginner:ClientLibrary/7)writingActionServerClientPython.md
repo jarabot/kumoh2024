@@ -2,7 +2,7 @@
 1. 개요
 2. 실습
    1. package 생성하기
-   2. service node 작성하기
+   2. server node 작성하기
    3. client node 작성하기
    4. 빌드 및 실행
 ## 1. 개요
