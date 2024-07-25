@@ -29,7 +29,7 @@ ros2 launch jarabot_node navigate.launch.py map:=$HOME/map.yaml #절대경로 �
 ## PC에서 실행
 * rviz2 실행
 ```bash
-ros2 run rviz2 rviz2 
+ros2 run rviz2 rviz2   # 이 명령 사용하면 2D Nav Goal 버튼이 안생겨요 ㅠㅠ. 아래 명령 수행해주세요.
 
 # 혹은 rviz 설정파일 불러오기
 rviz2 -d ~/ros2_ws/src/jarabot/jarabot_navigation2/rviz/jarabot_navigation2.rviz
