@@ -2,6 +2,13 @@
 * RPLiDAR 및 jarabot ROS 2 패키지 설치
 ```bash
 sudo apt install ros-humble-serial-driver ros-humble-teleop-twist-keyboard
+
+mkdir -p ~/ros2_ws/src
+cd ~/ros2_ws/src
+git clone https://github.com/Slamtec/sllidar_ros2.git
+git clone https://github.com/jarabot/jarabot.git
+cd ~/ros2_ws
+colcon build --symlink-install
 ```
 
 ## ROS_DOMAIN_ID 설정
