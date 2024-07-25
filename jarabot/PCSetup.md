@@ -1,5 +1,5 @@
 # 설정
-* RPLiDAR 및 jarabot ROS 2 패캐지 설치
+* RPLiDAR 및 jarabot ROS 2 패키지 설치
 ```bash
 sudo apt install ros-humble-serial-driver ros-humble-teleop-twist-keyboard
 ```
