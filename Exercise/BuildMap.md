@@ -54,10 +54,4 @@ ros2 run rviz2 rviz2 ~/ros2_ws/src/jarabot/jarabot_cartographer/rviz/jarabot_car
 ros2 run nav2_map_server map_saver_cli -f ~/map
 ```
 
-* turtlebot4와 같은 방법으로 저장하기
-```bash
-ros2 service call /slam_toolbox/save_map slam_toolbox/srv/SaveMap "name:
-  data: 'map_name'"
-```
-
 * 
